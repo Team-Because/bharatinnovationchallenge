@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import heroInnovation from "@/assets/hero-innovation.jpg";
+import overviewEngineers from "@/assets/overview-engineers.jpg";
+import campusNamtech from "@/assets/campus-namtech.jpg";
+import eligibilityStudents from "@/assets/eligibility-students.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -134,6 +138,24 @@ function Hero() {
           <RegistrationCard />
         </div>
       </div>
+      <div className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border shadow-[0_40px_80px_-40px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
+          <img
+            src={heroInnovation}
+            alt="Robotics, semiconductors and sustainability — the future of Indian manufacturing"
+            className="h-[320px] w-full object-cover sm:h-[420px]"
+            width={1280}
+            height={420}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
+            <div className="text-background mix-blend-difference">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">Powered by</div>
+              <div className="text-2xl font-black tracking-tight sm:text-3xl">NAMTECH · India's Manufacturing Frontier</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -222,6 +244,16 @@ function Overview() {
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
               A national stage for India's next engineers.
             </h2>
+            <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+              <img
+                src={overviewEngineers}
+                alt="Engineering students prototyping in an innovation lab"
+                loading="lazy"
+                width={1280}
+                height={960}
+                className="h-72 w-full object-cover"
+              />
+            </div>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
@@ -314,6 +346,17 @@ function Rewards() {
               2-Day Fully Sponsored NAMTECH Experience Pass
             </h3>
             <p className="mt-1 text-sm text-background/60">Travel + accommodation included</p>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-background/10">
+              <img
+                src={campusNamtech}
+                alt="NAMTECH campus — advanced manufacturing institute"
+                loading="lazy"
+                width={1280}
+                height={720}
+                className="h-48 w-full object-cover"
+              />
+            </div>
 
             <div className="mt-7 space-y-4">
               {[
@@ -481,6 +524,16 @@ function Eligibility() {
             Built for engineering students at the edge of graduation — ready to
             ship their ideas into the real world.
           </p>
+          <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+            <img
+              src={eligibilityStudents}
+              alt="B.Tech students with a prototype and pitch deck"
+              loading="lazy"
+              width={1280}
+              height={960}
+              className="h-72 w-full object-cover"
+            />
+          </div>
         </div>
         <div className="rounded-3xl border border-border bg-card p-8">
           <ul className="space-y-5">
