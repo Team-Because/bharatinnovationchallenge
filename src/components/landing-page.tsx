@@ -92,7 +92,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <GridBackdrop />
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-16 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-24">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-16">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
@@ -120,7 +120,7 @@ function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
+          <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
             {[
               { k: "₹1", v: "Registration" },
               { k: "₹1.03L", v: "Prize Pool" },
@@ -136,24 +136,6 @@ function Hero() {
 
         <div id="register" className="lg:pt-6">
           <RegistrationCard />
-        </div>
-      </div>
-      <div className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="relative overflow-hidden rounded-3xl border border-border shadow-[0_40px_80px_-40px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
-          <img
-            src={heroInnovation}
-            alt="Robotics, semiconductors and sustainability — the future of Indian manufacturing"
-            className="h-[320px] w-full object-cover sm:h-[420px]"
-            width={1280}
-            height={420}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
-            <div className="text-background mix-blend-difference">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">Powered by</div>
-              <div className="text-2xl font-black tracking-tight sm:text-3xl">NAMTECH · India's Manufacturing Frontier</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -235,7 +217,7 @@ function RegistrationCard() {
 function Overview() {
   return (
     <section id="overview" className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
@@ -244,14 +226,14 @@ function Overview() {
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
               A national stage for India's next engineers.
             </h2>
-            <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+            <div className="mt-6 overflow-hidden rounded-3xl border border-border">
               <img
                 src={overviewEngineers}
                 alt="Engineering students prototyping in an innovation lab"
                 loading="lazy"
                 width={1280}
                 height={960}
-                className="h-72 w-full object-cover"
+                className="h-56 w-full object-cover"
               />
             </div>
           </div>
@@ -296,7 +278,7 @@ const WHY = [
 function Why() {
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Why Participate</p>
@@ -305,13 +287,13 @@ function Why() {
             </h2>
           </div>
         </div>
-        <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-3xl bg-border sm:grid-cols-2 lg:grid-cols-3">
           {WHY.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group bg-card p-8 transition hover:bg-secondary/60">
+            <div key={title} className="group bg-card p-6 transition hover:bg-secondary/60">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-6 text-xl font-bold">{title}</h3>
+              <h3 className="mt-5 text-xl font-bold">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </div>
           ))}
@@ -329,7 +311,7 @@ function Rewards() {
   ];
   return (
     <section id="rewards" className="border-t border-border bg-foreground text-background">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">
           Rewards & Recognition
         </p>
@@ -337,7 +319,7 @@ function Rewards() {
           Every shortlisted participant wins something real.
         </h2>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
           <div className="rounded-3xl border border-background/10 bg-background/5 p-8">
             <div className="text-xs font-semibold uppercase tracking-wider text-background/60">
               All Shortlisted Participants Receive
@@ -347,14 +329,14 @@ function Rewards() {
             </h3>
             <p className="mt-1 text-sm text-background/60">Travel + accommodation included</p>
 
-            <div className="mt-6 overflow-hidden rounded-2xl border border-background/10">
+            <div className="mt-5 overflow-hidden rounded-2xl border border-background/10">
               <img
                 src={campusNamtech}
                 alt="NAMTECH campus — advanced manufacturing institute"
                 loading="lazy"
                 width={1280}
                 height={720}
-                className="h-48 w-full object-cover"
+                className="h-40 w-full object-cover"
               />
             </div>
 
@@ -417,7 +399,7 @@ const TRACKS = [
 function Tracks() {
   return (
     <section id="tracks" className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Innovation Tracks</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
@@ -429,16 +411,16 @@ function Tracks() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {TRACKS.map(({ icon: Icon, name }, i) => (
             <div
               key={name}
-              className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition hover:border-primary/40 hover:shadow-lg"
+              className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-5 transition hover:border-primary/40 hover:shadow-lg"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon className="h-6 w-6" />
               </div>
-              <div className="mt-10">
+              <div className="mt-8">
                 <div className="text-xs font-medium text-muted-foreground">Track 0{i + 1}</div>
                 <div className="mt-1 text-base font-bold leading-snug">{name}</div>
               </div>
@@ -470,7 +452,7 @@ function Process() {
   ];
   return (
     <section id="process" className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Submission Process</p>
@@ -480,7 +462,7 @@ function Process() {
           </div>
         </div>
 
-        <div className="relative mt-16 grid gap-6 md:grid-cols-3">
+        <div className="relative mt-12 grid gap-6 md:grid-cols-3">
           <div className="pointer-events-none absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent md:block" />
           {steps.map((s, i) => (
             <div key={s.title} className="relative rounded-3xl border border-border bg-card p-7">
@@ -496,7 +478,7 @@ function Process() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
+        <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
           <span className="font-semibold text-foreground">Required submissions:</span>{" "}
           2-Minute Elevator Pitch Video · 5-Slide Project Presentation (PDF) · ₹1
           Payment Confirmation Screenshot / Receipt.
@@ -514,7 +496,7 @@ function Eligibility() {
   ];
   return (
     <section className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Eligibility</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
@@ -524,14 +506,14 @@ function Eligibility() {
             Built for engineering students at the edge of graduation — ready to
             ship their ideas into the real world.
           </p>
-          <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+          <div className="mt-6 overflow-hidden rounded-3xl border border-border">
             <img
               src={eligibilityStudents}
               alt="B.Tech students with a prototype and pitch deck"
               loading="lazy"
               width={1280}
               height={960}
-              className="h-72 w-full object-cover"
+              className="h-56 w-full object-cover"
             />
           </div>
         </div>
@@ -561,13 +543,13 @@ function Timeline() {
   ];
   return (
     <section className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-24">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Timeline</p>
         <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
           Key dates, coming soon.
         </h2>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {phases.map((p, i) => (
             <div key={p.label} className="rounded-2xl border border-border bg-card p-6">
               <div className="text-xs font-bold uppercase tracking-wider text-primary">Phase 0{i + 1}</div>
@@ -608,7 +590,7 @@ function FAQs() {
   ];
   return (
     <section id="faq" className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1.4fr]">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">FAQs</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
@@ -641,7 +623,7 @@ function FAQs() {
 function FinalCTA() {
   return (
     <section className="border-t border-border bg-primary text-primary-foreground">
-      <div className="relative mx-auto max-w-7xl overflow-hidden px-6 py-24 text-center">
+      <div className="relative mx-auto max-w-7xl overflow-hidden px-6 py-16 text-center">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-0 opacity-30"
