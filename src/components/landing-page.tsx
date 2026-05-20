@@ -106,9 +106,9 @@ function Hero() {
             Bharat Innovation Challenge · 2026
           </div>
           <h1 className="mt-6 text-5xl font-black leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            I am India.
+            BHARAT INNOVATION
             <br />
-            <span className="text-primary">I build the future.</span>
+            <span className="text-primary">CHALLENGE</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             A national innovation platform for B.Tech & BE engineers graduating in
