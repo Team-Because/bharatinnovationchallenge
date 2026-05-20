@@ -233,7 +233,7 @@ function Overview() {
   return (
     <section id="overview" className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               Competition Overview
