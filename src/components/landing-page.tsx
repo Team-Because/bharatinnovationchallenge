@@ -596,7 +596,7 @@ function Eligibility() {
   ];
   return (
     <section className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 py-16 lg:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Eligibility</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
@@ -617,17 +617,23 @@ function Eligibility() {
             />
           </div>
         </div>
-        <div className="rounded-3xl border border-border bg-card p-8">
-          <ul className="space-y-5">
-            {checks.map((c) => (
-              <li key={c} className="flex items-start gap-4 border-b border-border pb-5 last:border-b-0 last:pb-0">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <CheckCircle2 className="h-5 w-5" />
-                </div>
-                <div className="text-lg font-semibold text-foreground">{c}</div>
-              </li>
-            ))}
-          </ul>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Checklist</p>
+          <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl invisible h-0 lg:visible lg:h-auto" aria-hidden>
+            &nbsp;
+          </h2>
+          <div className="rounded-3xl border border-border bg-card p-8 lg:mt-4">
+            <ul className="space-y-5">
+              {checks.map((c) => (
+                <li key={c} className="flex items-start gap-4 border-b border-border pb-5 last:border-b-0 last:pb-0">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </div>
+                  <div className="text-lg font-semibold text-foreground">{c}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
