@@ -6,6 +6,13 @@ import heroInnovation from "@/assets/hero-innovation.jpg";
 import overviewEngineers from "@/assets/overview-engineers.jpg";
 import campusNamtech from "@/assets/campus-namtech.jpg";
 import eligibilityStudents from "@/assets/eligibility-students.jpg";
+import trackSmartManufacturing from "@/assets/track-smart-manufacturing.jpg";
+import trackSemiconductor from "@/assets/track-semiconductor.jpg";
+import trackSustainability from "@/assets/track-sustainability.jpg";
+import trackDataAi from "@/assets/track-data-ai.jpg";
+import trackRobotics from "@/assets/track-robotics.jpg";
+import trackAutomotive from "@/assets/track-automotive.jpg";
+import trackOpenInnovation from "@/assets/track-open-innovation.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -427,13 +434,13 @@ function Rewards() {
 }
 
 const TRACKS = [
-  { icon: Cpu, name: "Smart Manufacturing", desc: "Industry 4.0, IoT-enabled production, digital twins, and intelligent factory systems.", color: "#4f46e5" },
-  { icon: CircuitBoard, name: "Semiconductor Technology", desc: "Chip design, fabrication processes, packaging innovation, and microelectronics.", color: "#7c3aed" },
-  { icon: Leaf, name: "Sustainability Engineering", desc: "Green manufacturing, circular economy, carbon-neutral processes, and eco-design.", color: "#059669" },
-  { icon: Bot, name: "Robotics & Automation", desc: "Autonomous systems, cobots, precision automation, and intelligent control systems.", color: "#db2777" },
-  { icon: BarChart3, name: "Data Analytics & AI", desc: "Machine learning, predictive maintenance, quality AI, and smart decision systems.", color: "#2563eb" },
-  { icon: Car, name: "Automotive Engineering", desc: "EV technology, autonomous vehicles, lightweight materials, and powertrain innovation.", color: "#d97706" },
-  { icon: Lightbulb, name: "Open Innovation / Others", desc: "Breakthrough ideas that defy categories — the next big thing we have not seen yet.", color: "#7c2d12" },
+  { image: trackSmartManufacturing, name: "Smart Manufacturing", desc: "Industry 4.0, IoT-enabled production, digital twins, and intelligent factory systems." },
+  { image: trackSemiconductor, name: "Semiconductor Technology", desc: "Chip design, fabrication processes, packaging innovation, and microelectronics." },
+  { image: trackSustainability, name: "Sustainability Engineering", desc: "Green manufacturing, circular economy, carbon-neutral processes, and eco-design." },
+  { image: trackRobotics, name: "Robotics & Automation", desc: "Autonomous systems, cobots, precision automation, and intelligent control systems." },
+  { image: trackDataAi, name: "Data Analytics & AI", desc: "Machine learning, predictive maintenance, quality AI, and smart decision systems." },
+  { image: trackAutomotive, name: "Automotive Engineering", desc: "EV technology, autonomous vehicles, lightweight materials, and powertrain innovation." },
+  { image: trackOpenInnovation, name: "Open Innovation / Others", desc: "Breakthrough ideas that defy categories — the next big thing we have not seen yet." },
 ];
 
 function Tracks() {
@@ -452,22 +459,28 @@ function Tracks() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TRACKS.map(({ name, desc }, i) => (
+          {TRACKS.map(({ name, desc, image }, i) => (
             <div
               key={name}
               className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
-              <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 [background:radial-gradient(circle,color-mix(in_oklab,var(--primary)_30%,transparent)_0%,transparent_70%)]" />
+              <img
+                src={image}
+                alt={name}
+                loading="lazy"
+                className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/92 to-white/70" />
               <div className="relative z-10 flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
                   Track 0{i + 1}
                 </span>
-                <span className="text-4xl font-black leading-none text-primary/10">
+                <span className="text-4xl font-black leading-none text-primary/20">
                   0{i + 1}
                 </span>
               </div>
               <div className="relative z-10 mt-4 h-1 w-12 rounded-full bg-primary" />
-              <h3 className="relative z-10 mt-5 text-xl font-bold leading-snug">{name}</h3>
+              <h3 className="relative z-10 mt-5 text-xl font-bold leading-snug text-foreground">{name}</h3>
               <p className="relative z-10 mt-2 text-sm leading-relaxed text-muted-foreground">
                 {desc}
               </p>
