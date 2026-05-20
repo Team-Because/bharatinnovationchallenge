@@ -342,7 +342,7 @@ function Rewards() {
         </h2>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
-          <div className="rounded-3xl border border-border bg-background p-8 text-foreground">
+          <div className="flex flex-col items-center rounded-3xl border border-border bg-background p-8 text-center text-foreground">
             <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               All Shortlisted Participants Receive
             </div>
@@ -351,7 +351,7 @@ function Rewards() {
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">Travel + accommodation included</p>
 
-            <div className="mt-5 overflow-hidden rounded-2xl border border-border">
+            <div className="mt-5 w-full overflow-hidden rounded-2xl border border-border">
               <img
                 src={campusNamtech}
                 alt="NAMTECH campus — advanced manufacturing institute"
@@ -362,7 +362,7 @@ function Rewards() {
               />
             </div>
 
-            <div className="mt-7 space-y-4">
+            <div className="mt-7 w-full space-y-4 text-left">
               {[
                 { day: "Day 1", title: "Grand Finale Participation" },
                 { day: "Day 2", title: "Exclusive NAMTECH Campus Experience" },
