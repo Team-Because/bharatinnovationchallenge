@@ -416,8 +416,6 @@ const TRACKS = [
 ];
 
 function Tracks() {
-  const [hovered, setHovered] = useState<number | null>(null);
-
   return (
     <section id="tracks" className="border-t border-border">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -432,51 +430,36 @@ function Tracks() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2">
-          {TRACKS.map(({ icon: Icon, name, desc, color }, i) => {
-            const isHovered = hovered === i;
-            const spanClass = i === 0 ? "lg:col-span-6 lg:row-span-2" : i === 1 || i === 2 ? "lg:col-span-3" : "lg:col-span-4";
-            return (
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {TRACKS.map(({ icon: Icon, name, desc, color }, i) => (
+            <div
+              key={name}
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+            >
               <div
-                key={name}
-                className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40 ${spanClass} ${isHovered ? "scale-[1.02] shadow-2xl" : "shadow-sm"}`}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                style={{
-                  background: isHovered
-                    ? `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), color-mix(in oklab, ${color} 12%, var(--card)), var(--card))`
-                    : undefined,
-                }}
-              >
+                className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{ background: `radial-gradient(circle, ${color}33 0%, transparent 70%)` }}
+              />
+              <div className="relative z-10 flex items-start justify-between">
                 <div
-                  className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: `radial-gradient(circle, ${color}30 0%, transparent 70%)` }}
-                />
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="flex items-start justify-between">
-                    <div
-                      className="flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundColor: color }}
-                    >
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <span
-                      className="text-5xl font-black leading-none opacity-10 transition-opacity duration-300 group-hover:opacity-20"
-                      style={{ color }}
-                    >
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="mt-auto pt-6">
-                    <h3 className="text-lg font-bold leading-snug">{name}</h3>
-                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground opacity-0 transition-all duration-300 group-hover:opacity-100">
-                      {desc}
-                    </p>
-                  </div>
+                  className="flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-md transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: color }}
+                >
+                  <Icon className="h-6 w-6" />
                 </div>
+                <span
+                  className="text-4xl font-black leading-none opacity-10"
+                  style={{ color }}
+                >
+                  0{i + 1}
+                </span>
               </div>
-            );
-          })}
+              <h3 className="relative z-10 mt-5 text-lg font-bold leading-snug">{name}</h3>
+              <p className="relative z-10 mt-2 text-sm leading-relaxed text-muted-foreground">
+                {desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
