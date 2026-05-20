@@ -618,8 +618,10 @@ function Eligibility() {
           </div>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Checklist</p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl invisible h-0 lg:visible lg:h-auto" aria-hidden>
+          <p className="invisible hidden text-xs font-semibold uppercase tracking-[0.18em] lg:block" aria-hidden>
+            Spacer
+          </p>
+          <h2 className="invisible hidden text-4xl font-black tracking-tight sm:text-5xl lg:mt-3 lg:block" aria-hidden>
             &nbsp;
           </h2>
           <div className="rounded-3xl border border-border bg-card p-8 lg:mt-4">
