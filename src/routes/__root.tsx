@@ -72,11 +72,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Bharat Innovation Challenge — NAMTECH" },
+      {
+        name: "description",
+        content:
+          "National innovation platform for B.Tech / BE engineers. Register for ₹1 and take your idea to the Grand Finale at NAMTECH.",
+      },
+      { name: "author", content: "NAMTECH" },
+      { property: "og:title", content: "Bharat Innovation Challenge — NAMTECH" },
+      {
+        property: "og:description",
+        content:
+          "I AM INDIA. I BUILD THE FUTURE. Showcase your innovation nationally. Register now for ₹1.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
