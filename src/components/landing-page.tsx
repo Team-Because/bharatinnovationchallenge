@@ -259,7 +259,7 @@ function Overview() {
               />
             </div>
           </div>
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:pt-20">
             <p>
               The <span className="font-semibold text-foreground">Bharat Innovation Challenge</span>{" "}
               is a national platform for B.Tech / BE engineers graduating in
