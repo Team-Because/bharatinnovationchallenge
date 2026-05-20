@@ -452,7 +452,7 @@ function Tracks() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TRACKS.map(({ icon: Icon, name, desc, color }, i) => (
+          {TRACKS.map(({ name, desc, color }, i) => (
             <div
               key={name}
               className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
@@ -461,13 +461,13 @@ function Tracks() {
                 className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{ background: `radial-gradient(circle, ${color}33 0%, transparent 70%)` }}
               />
-              <div className="relative z-10 flex items-start justify-between">
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-md transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundColor: color }}
+              <div className="relative z-10 flex items-center justify-between">
+                <span
+                  className="text-xs font-bold uppercase tracking-[0.18em]"
+                  style={{ color }}
                 >
-                  <Icon className="h-6 w-6" />
-                </div>
+                  Track 0{i + 1}
+                </span>
                 <span
                   className="text-4xl font-black leading-none opacity-10"
                   style={{ color }}
@@ -475,7 +475,11 @@ function Tracks() {
                   0{i + 1}
                 </span>
               </div>
-              <h3 className="relative z-10 mt-5 text-lg font-bold leading-snug">{name}</h3>
+              <div
+                className="relative z-10 mt-4 h-1 w-12 rounded-full"
+                style={{ backgroundColor: color }}
+              />
+              <h3 className="relative z-10 mt-5 text-xl font-bold leading-snug">{name}</h3>
               <p className="relative z-10 mt-2 text-sm leading-relaxed text-muted-foreground">
                 {desc}
               </p>
