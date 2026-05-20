@@ -40,6 +40,18 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Rocket, FileCheck2, Megaphone } from "lucide-react";
+import {
+  Globe2,
+  TrendingUp,
+  Medal,
+  Landmark,
+  Users,
+  BadgeIndianRupee,
+  ScanLine,
+  PenLine,
+  FileUp,
+  Check,
+} from "lucide-react";
 
 function NamtechMark() {
   return (
@@ -274,12 +286,12 @@ function Overview() {
 }
 
 const WHY = [
-  { icon: Flag, title: "Showcase Nationally", desc: "Stand out among India's top engineering talent." },
-  { icon: Trophy, title: "Win Cash Prizes", desc: "Compete for a ₹1.03L prize pool at the Grand Finale." },
-  { icon: Briefcase, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
-  { icon: GraduationCap, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
-  { icon: Award, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
-  { icon: Building2, title: "NAMTECH Campus Experience", desc: "Step into India's premier manufacturing institute." },
+  { icon: Globe2, title: "Showcase Nationally", desc: "Stand out among India's top engineering talent." },
+  { icon: BadgeIndianRupee, title: "Win Cash Prizes", desc: "Compete for a ₹1.03L prize pool at the Grand Finale." },
+  { icon: Users, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
+  { icon: TrendingUp, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
+  { icon: Medal, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
+  { icon: Landmark, title: "NAMTECH Campus Experience", desc: "Step into India's premier manufacturing institute." },
 ];
 
 function Why() {
@@ -404,8 +416,6 @@ const TRACKS = [
 ];
 
 function Tracks() {
-  const [hovered, setHovered] = useState<number | null>(null);
-
   return (
     <section id="tracks" className="border-t border-border">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -420,51 +430,36 @@ function Tracks() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2">
-          {TRACKS.map(({ icon: Icon, name, desc, color }, i) => {
-            const isHovered = hovered === i;
-            const spanClass = i === 0 ? "lg:col-span-6 lg:row-span-2" : i === 1 || i === 2 ? "lg:col-span-3" : "lg:col-span-4";
-            return (
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {TRACKS.map(({ icon: Icon, name, desc, color }, i) => (
+            <div
+              key={name}
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+            >
               <div
-                key={name}
-                className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40 ${spanClass} ${isHovered ? "scale-[1.02] shadow-2xl" : "shadow-sm"}`}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                style={{
-                  background: isHovered
-                    ? `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), color-mix(in oklab, ${color} 12%, var(--card)), var(--card))`
-                    : undefined,
-                }}
-              >
+                className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{ background: `radial-gradient(circle, ${color}33 0%, transparent 70%)` }}
+              />
+              <div className="relative z-10 flex items-start justify-between">
                 <div
-                  className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: `radial-gradient(circle, ${color}30 0%, transparent 70%)` }}
-                />
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="flex items-start justify-between">
-                    <div
-                      className="flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundColor: color }}
-                    >
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <span
-                      className="text-5xl font-black leading-none opacity-10 transition-opacity duration-300 group-hover:opacity-20"
-                      style={{ color }}
-                    >
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="mt-auto pt-6">
-                    <h3 className="text-lg font-bold leading-snug">{name}</h3>
-                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground opacity-0 transition-all duration-300 group-hover:opacity-100">
-                      {desc}
-                    </p>
-                  </div>
+                  className="flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-md transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: color }}
+                >
+                  <Icon className="h-6 w-6" />
                 </div>
+                <span
+                  className="text-4xl font-black leading-none opacity-10"
+                  style={{ color }}
+                >
+                  0{i + 1}
+                </span>
               </div>
-            );
-          })}
+              <h3 className="relative z-10 mt-5 text-lg font-bold leading-snug">{name}</h3>
+              <p className="relative z-10 mt-2 text-sm leading-relaxed text-muted-foreground">
+                {desc}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -474,21 +469,29 @@ function Tracks() {
 function Process() {
   const steps = [
     {
-      icon: QrCode,
+      icon: ScanLine,
       title: "Scan & Pay ₹1",
       desc: "Scan the QR code and complete the ₹1 registration payment. Save the confirmation screenshot.",
+      detail: "Use any UPI app — GPay, PhonePe, Paytm. Takes under 30 seconds. Screenshot the success page; you'll attach it in step 3.",
+      time: "30 sec",
     },
     {
-      icon: ClipboardList,
+      icon: PenLine,
       title: "Complete Form",
       desc: "Fill in the registration form with your academic and personal details.",
+      detail: "Name, email, mobile, college, branch, passing year. All fields are short — no essays, no uploads here.",
+      time: "2 min",
     },
     {
-      icon: UploadCloud,
+      icon: FileUp,
       title: "Upload Submission",
       desc: "Submit your 2-min pitch video, 5-slide PDF, and ₹1 payment receipt.",
+      detail: "Pitch video (MP4, ≤ 200MB), slide deck (PDF, ≤ 10MB), payment screenshot (PNG/JPG). Drag & drop or browse.",
+      time: "5 min",
     },
   ];
+  const [active, setActive] = useState(0);
+  const Current = steps[active].icon;
   return (
     <section id="process" className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -498,23 +501,81 @@ function Process() {
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
               Three steps. About 10 minutes.
             </h2>
+            <p className="mt-3 text-muted-foreground">
+              Tap any step to see exactly what happens. No surprises, no fine print.
+            </p>
           </div>
         </div>
 
-        <div className="relative mt-12 grid gap-6 md:grid-cols-3">
-          <div className="pointer-events-none absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent md:block" />
-          {steps.map((s, i) => (
-            <div key={s.title} className="relative rounded-3xl border border-border bg-card p-7">
-              <div className="flex items-center justify-between">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-                  <s.icon className="h-7 w-7" />
-                </div>
-                <span className="text-5xl font-black tracking-tight text-primary/10">0{i + 1}</span>
-              </div>
-              <h3 className="mt-6 text-xl font-bold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-            </div>
-          ))}
+        <div className="relative mt-12">
+          {/* connector base */}
+          <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-1 rounded-full bg-border md:block" />
+          {/* animated progress */}
+          <div
+            className="pointer-events-none absolute left-0 top-9 hidden h-1 rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-500 ease-out md:block"
+            style={{ width: `${((active + 1) / steps.length) * 100}%` }}
+          />
+
+          <div className="relative grid gap-6 md:grid-cols-3">
+            {steps.map((s, i) => {
+              const Icon = s.icon;
+              const isActive = i === active;
+              const isDone = i < active;
+              return (
+                <button
+                  key={s.title}
+                  onClick={() => setActive(i)}
+                  className={`group relative flex flex-col items-start rounded-3xl border bg-card p-7 text-left transition-all duration-300 focus:outline-none ${
+                    isActive
+                      ? "-translate-y-1 border-primary shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_55%,transparent)]"
+                      : "border-border hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                  }`}
+                >
+                  <div className="flex w-full items-center justify-between">
+                    <span
+                      className={`relative flex h-[72px] w-[72px] items-center justify-center rounded-2xl transition-all duration-300 ${
+                        isActive
+                          ? "scale-110 bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_18%,transparent)]"
+                          : isDone
+                          ? "bg-primary/15 text-primary"
+                          : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+                      }`}
+                    >
+                      {isDone ? <Check className="h-7 w-7" /> : <Icon className="h-7 w-7" />}
+                      {isActive && (
+                        <span className="absolute inset-0 animate-ping rounded-2xl bg-primary/25" />
+                      )}
+                    </span>
+                    <span
+                      className={`text-5xl font-black tracking-tight transition-colors ${
+                        isActive ? "text-primary/30" : "text-primary/10"
+                      }`}
+                    >
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                    <span className={isActive ? "text-primary" : ""}>Step 0{i + 1}</span>
+                    <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
+                    <span>{s.time}</span>
+                  </div>
+                  <h3 className="mt-2 text-xl font-bold">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  <div
+                    className={`grid w-full transition-all duration-500 ease-out ${
+                      isActive ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-sm leading-relaxed text-foreground">
+                        {s.detail}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
@@ -535,7 +596,7 @@ function Eligibility() {
   ];
   return (
     <section className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 py-16 lg:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Eligibility</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
@@ -556,17 +617,25 @@ function Eligibility() {
             />
           </div>
         </div>
-        <div className="rounded-3xl border border-border bg-card p-8">
-          <ul className="space-y-5">
-            {checks.map((c) => (
-              <li key={c} className="flex items-start gap-4 border-b border-border pb-5 last:border-b-0 last:pb-0">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <CheckCircle2 className="h-5 w-5" />
-                </div>
-                <div className="text-lg font-semibold text-foreground">{c}</div>
-              </li>
-            ))}
-          </ul>
+        <div>
+          <p className="invisible hidden text-xs font-semibold uppercase tracking-[0.18em] lg:block" aria-hidden>
+            Spacer
+          </p>
+          <h2 className="invisible hidden text-4xl font-black tracking-tight sm:text-5xl lg:mt-3 lg:block" aria-hidden>
+            &nbsp;
+          </h2>
+          <div className="rounded-3xl border border-border bg-card p-8 lg:mt-4">
+            <ul className="space-y-5">
+              {checks.map((c) => (
+                <li key={c} className="flex items-start gap-4 border-b border-border pb-5 last:border-b-0 last:pb-0">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </div>
+                  <div className="text-lg font-semibold text-foreground">{c}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
