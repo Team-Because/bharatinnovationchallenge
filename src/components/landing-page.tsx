@@ -311,7 +311,7 @@ function Rewards() {
     { place: "3rd Prize", amount: "₹21,000", tone: "text-foreground" },
   ];
   return (
-    <section id="rewards" className="border-t border-border bg-foreground text-background">
+    <section id="rewards" className="border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">
           Rewards & Recognition
