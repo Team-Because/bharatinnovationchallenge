@@ -313,7 +313,7 @@ function Rewards() {
   return (
     <section id="rewards" className="border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/60">
           Rewards & Recognition
         </p>
         <h2 className="mt-3 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
@@ -321,16 +321,16 @@ function Rewards() {
         </h2>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
-          <div className="rounded-3xl border border-background/10 bg-background/5 p-8">
-            <div className="text-xs font-semibold uppercase tracking-wider text-background/60">
+          <div className="rounded-3xl border border-border bg-background p-8 text-foreground">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               All Shortlisted Participants Receive
             </div>
             <h3 className="mt-3 text-2xl font-bold">
               2-Day Fully Sponsored NAMTECH Experience Pass
             </h3>
-            <p className="mt-1 text-sm text-background/60">Travel + accommodation included</p>
+            <p className="mt-1 text-sm text-muted-foreground">Travel + accommodation included</p>
 
-            <div className="mt-5 overflow-hidden rounded-2xl border border-background/10">
+            <div className="mt-5 overflow-hidden rounded-2xl border border-border">
               <img
                 src={campusNamtech}
                 alt="NAMTECH campus — advanced manufacturing institute"
@@ -347,8 +347,8 @@ function Rewards() {
                 { day: "Day 2", title: "Exclusive NAMTECH Campus Experience" },
                 { day: "+", title: "Participation E-Certificate" },
               ].map((d) => (
-                <div key={d.title} className="flex items-start gap-4 border-t border-background/10 pt-4 first:border-t-0 first:pt-0">
-                  <div className="mt-0.5 inline-flex h-9 w-12 items-center justify-center rounded-md bg-background/10 text-xs font-bold">
+                <div key={d.title} className="flex items-start gap-4 border-t border-border pt-4 first:border-t-0 first:pt-0">
+                  <div className="mt-0.5 inline-flex h-9 w-12 items-center justify-center rounded-md bg-muted text-xs font-bold text-foreground">
                     {d.day}
                   </div>
                   <div className="text-base font-semibold">{d.title}</div>
@@ -357,8 +357,8 @@ function Rewards() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-background/10 bg-background/5 p-8">
-            <div className="text-xs font-semibold uppercase tracking-wider text-background/60">
+          <div className="rounded-3xl border border-border bg-background p-8 text-foreground">
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Grand Finale Winner Prizes
             </div>
             <div className="mt-6 space-y-4">
