@@ -286,12 +286,12 @@ function Overview() {
 }
 
 const WHY = [
-  { icon: Flag, title: "Showcase Nationally", desc: "Stand out among India's top engineering talent." },
-  { icon: Trophy, title: "Win Cash Prizes", desc: "Compete for a ₹1.03L prize pool at the Grand Finale." },
-  { icon: Briefcase, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
-  { icon: GraduationCap, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
-  { icon: Award, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
-  { icon: Building2, title: "NAMTECH Campus Experience", desc: "Step into India's premier manufacturing institute." },
+  { icon: Globe2, title: "Showcase Nationally", desc: "Stand out among India's top engineering talent." },
+  { icon: BadgeIndianRupee, title: "Win Cash Prizes", desc: "Compete for a ₹1.03L prize pool at the Grand Finale." },
+  { icon: Users, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
+  { icon: TrendingUp, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
+  { icon: Medal, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
+  { icon: Landmark, title: "NAMTECH Campus Experience", desc: "Step into India's premier manufacturing institute." },
 ];
 
 function Why() {
