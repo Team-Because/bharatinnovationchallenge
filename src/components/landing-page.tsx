@@ -394,16 +394,18 @@ function Rewards() {
 }
 
 const TRACKS = [
-  { icon: Cpu, name: "Smart Manufacturing" },
-  { icon: CircuitBoard, name: "Semiconductor Technology" },
-  { icon: Leaf, name: "Sustainability Engineering" },
-  { icon: Bot, name: "Robotics & Automation" },
-  { icon: BarChart3, name: "Data Analytics & AI" },
-  { icon: Car, name: "Automotive Engineering" },
-  { icon: Lightbulb, name: "Open Innovation / Others" },
+  { icon: Cpu, name: "Smart Manufacturing", desc: "Industry 4.0, IoT-enabled production, digital twins, and intelligent factory systems.", color: "#4f46e5" },
+  { icon: CircuitBoard, name: "Semiconductor Technology", desc: "Chip design, fabrication processes, packaging innovation, and microelectronics.", color: "#7c3aed" },
+  { icon: Leaf, name: "Sustainability Engineering", desc: "Green manufacturing, circular economy, carbon-neutral processes, and eco-design.", color: "#059669" },
+  { icon: Bot, name: "Robotics & Automation", desc: "Autonomous systems, cobots, precision automation, and intelligent control systems.", color: "#db2777" },
+  { icon: BarChart3, name: "Data Analytics & AI", desc: "Machine learning, predictive maintenance, quality AI, and smart decision systems.", color: "#2563eb" },
+  { icon: Car, name: "Automotive Engineering", desc: "EV technology, autonomous vehicles, lightweight materials, and powertrain innovation.", color: "#d97706" },
+  { icon: Lightbulb, name: "Open Innovation / Others", desc: "Breakthrough ideas that defy categories — the next big thing we have not seen yet.", color: "#7c2d12" },
 ];
 
 function Tracks() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <section id="tracks" className="border-t border-border">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -418,21 +420,51 @@ function Tracks() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {TRACKS.map(({ icon: Icon, name }, i) => (
-            <div
-              key={name}
-              className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-5 transition hover:border-primary/40 hover:shadow-lg"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-                <Icon className="h-6 w-6" />
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2">
+          {TRACKS.map(({ icon: Icon, name, desc, color }, i) => {
+            const isHovered = hovered === i;
+            const spanClass = i === 0 ? "lg:col-span-6 lg:row-span-2" : i === 1 || i === 2 ? "lg:col-span-3" : "lg:col-span-4";
+            return (
+              <div
+                key={name}
+                className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40 ${spanClass} ${isHovered ? "scale-[1.02] shadow-2xl" : "shadow-sm"}`}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+                style={{
+                  background: isHovered
+                    ? `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), color-mix(in oklab, ${color} 12%, var(--card)), var(--card))`
+                    : undefined,
+                }}
+              >
+                <div
+                  className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ background: `radial-gradient(circle, ${color}30 0%, transparent 70%)` }}
+                />
+                <div className="relative z-10 flex h-full flex-col">
+                  <div className="flex items-start justify-between">
+                    <div
+                      className="flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: color }}
+                    >
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <span
+                      className="text-5xl font-black leading-none opacity-10 transition-opacity duration-300 group-hover:opacity-20"
+                      style={{ color }}
+                    >
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <div className="mt-auto pt-6">
+                    <h3 className="text-lg font-bold leading-snug">{name}</h3>
+                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      {desc}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="mt-8">
-                <div className="text-xs font-medium text-muted-foreground">Track 0{i + 1}</div>
-                <div className="mt-1 text-base font-bold leading-snug">{name}</div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
