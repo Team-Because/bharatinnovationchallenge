@@ -33,6 +33,8 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
+import { useState } from "react";
+import { Rocket, FileCheck2, Megaphone, Trophy } from "lucide-react";
 
 function NamtechMark() {
   return (
