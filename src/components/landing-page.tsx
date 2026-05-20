@@ -452,33 +452,21 @@ function Tracks() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TRACKS.map(({ name, desc, color }, i) => (
+          {TRACKS.map(({ name, desc }, i) => (
             <div
               key={name}
               className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
-              <div
-                className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{ background: `radial-gradient(circle, ${color}33 0%, transparent 70%)` }}
-              />
+              <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 [background:radial-gradient(circle,color-mix(in_oklab,var(--primary)_30%,transparent)_0%,transparent_70%)]" />
               <div className="relative z-10 flex items-center justify-between">
-                <span
-                  className="text-xs font-bold uppercase tracking-[0.18em]"
-                  style={{ color }}
-                >
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
                   Track 0{i + 1}
                 </span>
-                <span
-                  className="text-4xl font-black leading-none opacity-10"
-                  style={{ color }}
-                >
+                <span className="text-4xl font-black leading-none text-primary/10">
                   0{i + 1}
                 </span>
               </div>
-              <div
-                className="relative z-10 mt-4 h-1 w-12 rounded-full"
-                style={{ backgroundColor: color }}
-              />
+              <div className="relative z-10 mt-4 h-1 w-12 rounded-full bg-primary" />
               <h3 className="relative z-10 mt-5 text-xl font-bold leading-snug">{name}</h3>
               <p className="relative z-10 mt-2 text-sm leading-relaxed text-muted-foreground">
                 {desc}
