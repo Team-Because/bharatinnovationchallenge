@@ -347,6 +347,17 @@ function Rewards() {
             </h3>
             <p className="mt-1 text-sm text-background/60">Travel + accommodation included</p>
 
+            <div className="mt-6 overflow-hidden rounded-2xl border border-background/10">
+              <img
+                src={campusNamtech}
+                alt="NAMTECH campus — advanced manufacturing institute"
+                loading="lazy"
+                width={1280}
+                height={720}
+                className="h-48 w-full object-cover"
+              />
+            </div>
+
             <div className="mt-7 space-y-4">
               {[
                 { day: "Day 1", title: "Grand Finale Participation" },
