@@ -113,11 +113,7 @@ function Hero() {
       <GridBackdrop />
       <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-16">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary" />
-            Bharat Innovation Challenge · 2026
-          </div>
-          <h1 className="mt-6 text-5xl font-black leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             BHARAT INNOVATION
             <br />
             <span className="text-primary">CHALLENGE</span>
