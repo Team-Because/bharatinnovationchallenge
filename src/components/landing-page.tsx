@@ -342,7 +342,7 @@ function Rewards() {
         </h2>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
-          <div className="flex flex-col items-center rounded-3xl border border-border bg-background p-8 text-center text-foreground">
+          <div className="flex flex-col items-center justify-center rounded-3xl border border-border bg-background p-8 text-center text-foreground">
             <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               All Shortlisted Participants Receive
             </div>
