@@ -244,6 +244,16 @@ function Overview() {
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
               A national stage for India's next engineers.
             </h2>
+            <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+              <img
+                src={overviewEngineers}
+                alt="Engineering students prototyping in an innovation lab"
+                loading="lazy"
+                width={1280}
+                height={960}
+                className="h-72 w-full object-cover"
+              />
+            </div>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
