@@ -365,7 +365,7 @@ function Rewards() {
               {prizes.map((p, i) => (
                 <div
                   key={p.place}
-                  className="flex items-center justify-between rounded-2xl bg-background p-5 text-foreground"
+                  className="flex items-center justify-between rounded-2xl bg-muted p-5 text-foreground"
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-black text-primary">
