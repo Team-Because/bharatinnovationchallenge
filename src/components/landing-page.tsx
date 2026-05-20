@@ -371,28 +371,53 @@ function Rewards() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-background p-8 text-foreground">
+          <div className="flex flex-col items-center rounded-3xl border border-border bg-background p-8 text-center text-foreground">
             <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Grand Finale Winner Prizes
             </div>
-            <div className="mt-6 space-y-4">
-              {prizes.map((p, i) => (
-                <div
-                  key={p.place}
-                  className="flex items-center justify-between rounded-2xl bg-muted p-5 text-foreground"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-black text-primary">
+            <div className="mt-6 w-full space-y-4">
+              {prizes.map((p, i) => {
+                const isFirst = i === 0;
+                return (
+                  <div
+                    key={p.place}
+                    className={`flex flex-col items-center justify-center rounded-2xl text-foreground ${
+                      isFirst
+                        ? "bg-primary/10 p-8 ring-2 ring-primary/30"
+                        : "bg-muted p-5"
+                    }`}
+                  >
+                    <div
+                      className={`flex items-center justify-center rounded-full bg-primary/10 font-black text-primary ${
+                        isFirst ? "h-14 w-14 text-xl" : "h-10 w-10 text-sm"
+                      }`}
+                    >
                       {i + 1}
                     </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-muted-foreground">{p.place}</div>
-                      <div className="text-xs text-muted-foreground">+ Winner Certificate</div>
+                    <div
+                      className={`mt-3 uppercase tracking-wider text-muted-foreground ${
+                        isFirst ? "text-sm font-semibold" : "text-xs"
+                      }`}
+                    >
+                      {p.place}
+                    </div>
+                    <div
+                      className={`text-muted-foreground ${
+                        isFirst ? "text-sm" : "text-xs"
+                      }`}
+                    >
+                      + Winner Certificate
+                    </div>
+                    <div
+                      className={`mt-3 font-black tracking-tight ${p.tone} ${
+                        isFirst ? "text-5xl sm:text-6xl" : "text-2xl"
+                      }`}
+                    >
+                      {p.amount}
                     </div>
                   </div>
-                  <div className={`text-2xl font-black tracking-tight ${p.tone}`}>{p.amount}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
