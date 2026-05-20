@@ -537,29 +537,129 @@ function Eligibility() {
 
 function Timeline() {
   const phases = [
-    { label: "Registration Opens", date: "TBD" },
-    { label: "Submission Deadline", date: "TBD" },
-    { label: "Shortlist Announced", date: "TBD" },
-    { label: "Grand Finale @ NAMTECH", date: "TBD" },
+    {
+      label: "Registration Opens",
+      date: "TBD",
+      icon: Rocket,
+      blurb: "Sign up with ₹1 to lock your slot. Get instant access to submission guidelines and the project brief.",
+    },
+    {
+      label: "Submission Deadline",
+      date: "TBD",
+      icon: FileCheck2,
+      blurb: "Submit your 2-min pitch video and 5-slide deck before the gates close. Late entries won't be considered.",
+    },
+    {
+      label: "Shortlist Announced",
+      date: "TBD",
+      icon: Megaphone,
+      blurb: "Top teams are emailed directly. Sponsored travel & stay details follow within 48 hours of the announcement.",
+    },
+    {
+      label: "Grand Finale @ NAMTECH",
+      date: "TBD",
+      icon: Trophy,
+      blurb: "Two days on campus: pitch to the jury, tour labs, meet founders, and walk away with prizes & internship offers.",
+    },
   ];
+  const [active, setActive] = useState(0);
+  const Current = phases[active].icon;
   return (
-    <section className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+    <section className="relative overflow-hidden border-t border-border bg-secondary/40">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,hsl(var(--primary)/0.08),transparent_50%)]" />
+      <div className="relative mx-auto max-w-7xl px-6 py-16">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Timeline</p>
         <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
-          Key dates, coming soon.
+          Four phases. One shot.
         </h2>
+        <p className="mt-3 max-w-xl text-muted-foreground">
+          Tap a phase to see what happens. Specific dates drop soon — registrations stay open until then.
+        </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {phases.map((p, i) => (
-            <div key={p.label} className="rounded-2xl border border-border bg-card p-6">
-              <div className="text-xs font-bold uppercase tracking-wider text-primary">Phase 0{i + 1}</div>
-              <div className="mt-3 text-lg font-bold leading-snug">{p.label}</div>
-              <div className="mt-4 text-3xl font-black tracking-tight text-muted-foreground">
-                {p.date}
-              </div>
+        {/* Track */}
+        <div className="relative mt-14">
+          {/* base line */}
+          <div className="absolute left-0 right-0 top-7 hidden h-0.5 bg-border md:block" />
+          {/* progress line */}
+          <div
+            className="absolute left-0 top-7 hidden h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-500 ease-out md:block"
+            style={{ width: `${(active / (phases.length - 1)) * 100}%` }}
+          />
+
+          <div className="grid gap-10 md:grid-cols-4 md:gap-4">
+            {phases.map((p, i) => {
+              const Icon = p.icon;
+              const isActive = i === active;
+              const isDone = i < active;
+              return (
+                <button
+                  key={p.label}
+                  onClick={() => setActive(i)}
+                  className="group relative flex flex-col items-center text-center focus:outline-none"
+                >
+                  <span
+                    className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                      isActive
+                        ? "scale-110 border-primary bg-primary text-primary-foreground shadow-[0_0_0_6px_hsl(var(--primary)/0.15)]"
+                        : isDone
+                        ? "border-primary bg-primary/15 text-primary"
+                        : "border-border bg-card text-muted-foreground group-hover:border-primary/60 group-hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className="h-6 w-6" />
+                    {isActive && (
+                      <span className="absolute inset-0 animate-ping rounded-full bg-primary/30" />
+                    )}
+                  </span>
+                  <div
+                    className={`mt-4 text-[11px] font-bold uppercase tracking-[0.16em] transition-colors ${
+                      isActive ? "text-primary" : "text-muted-foreground"
+                    }`}
+                  >
+                    Phase 0{i + 1}
+                  </div>
+                  <div
+                    className={`mt-1 text-sm font-semibold leading-snug transition-colors ${
+                      isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
+                    }`}
+                  >
+                    {p.label}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Active detail card */}
+        <div
+          key={active}
+          className="mt-12 grid animate-fade-in gap-6 rounded-3xl border border-border bg-card p-6 sm:p-8 md:grid-cols-[auto_1fr_auto] md:items-center"
+        >
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+            <Current className="h-8 w-8" />
+          </div>
+          <div>
+            <div className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+              Phase 0{active + 1} of 0{phases.length}
             </div>
-          ))}
+            <h3 className="mt-1 text-2xl font-black tracking-tight sm:text-3xl">
+              {phases[active].label}
+            </h3>
+            <p className="mt-2 max-w-2xl text-muted-foreground">{phases[active].blurb}</p>
+          </div>
+          <div className="flex items-center gap-3 md:flex-col md:items-end">
+            <div className="text-right">
+              <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Date</div>
+              <div className="text-2xl font-black tracking-tight">{phases[active].date}</div>
+            </div>
+            <button
+              onClick={() => setActive((a) => (a + 1) % phases.length)}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold transition-colors hover:border-primary hover:text-primary"
+            >
+              Next phase <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
