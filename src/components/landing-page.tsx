@@ -712,10 +712,10 @@ function Timeline() {
         {/* Track */}
         <div className="relative mt-14">
           {/* base line */}
-          <div className="absolute left-0 right-0 top-7 hidden h-0.5 bg-border md:block" />
+          <div className="absolute left-0 right-0 top-7 z-0 hidden h-0.5 bg-border md:block" />
           {/* progress line */}
           <div
-            className="absolute left-0 top-7 hidden h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-500 ease-out md:block"
+            className="absolute left-0 top-7 z-0 hidden h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-500 ease-out md:block"
             style={{ width: `${(active / (phases.length - 1)) * 100}%` }}
           />
 
@@ -728,17 +728,20 @@ function Timeline() {
                 <button
                   key={p.label}
                   onClick={() => setActive(i)}
-                  className="group relative flex flex-col items-center text-center focus:outline-none"
+                  className="group relative z-10 flex flex-col items-center text-center focus:outline-none"
                 >
                   <span
                     className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-2 transition-all duration-300 ${
                       isActive
                         ? "scale-110 border-primary bg-primary text-primary-foreground shadow-[0_0_0_6px_hsl(var(--primary)/0.15)]"
                         : isDone
-                        ? "border-primary bg-primary/15 text-primary"
-                        : "border-border bg-card text-muted-foreground group-hover:border-primary/60 group-hover:text-foreground"
+                        ? "border-primary bg-background text-primary"
+                        : "border-border bg-background text-muted-foreground group-hover:border-primary/60 group-hover:text-foreground"
                     }`}
                   >
+                    {isDone && (
+                      <span className="absolute inset-0 rounded-full bg-primary/15" />
+                    )}
                     <Icon className="h-6 w-6" />
                     {isActive && (
                       <span className="absolute inset-0 animate-ping rounded-full bg-primary/30" />
