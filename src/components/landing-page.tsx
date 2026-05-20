@@ -40,6 +40,18 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Rocket, FileCheck2, Megaphone } from "lucide-react";
+import {
+  Globe2,
+  TrendingUp,
+  Medal,
+  Landmark,
+  Users,
+  BadgeIndianRupee,
+  ScanLine,
+  PenLine,
+  FileUp,
+  Check,
+} from "lucide-react";
 
 function NamtechMark() {
   return (
