@@ -524,6 +524,16 @@ function Eligibility() {
             Built for engineering students at the edge of graduation — ready to
             ship their ideas into the real world.
           </p>
+          <div className="mt-8 overflow-hidden rounded-3xl border border-border">
+            <img
+              src={eligibilityStudents}
+              alt="B.Tech students with a prototype and pitch deck"
+              loading="lazy"
+              width={1280}
+              height={960}
+              className="h-72 w-full object-cover"
+            />
+          </div>
         </div>
         <div className="rounded-3xl border border-border bg-card p-8">
           <ul className="space-y-5">
