@@ -138,6 +138,24 @@ function Hero() {
           <RegistrationCard />
         </div>
       </div>
+      <div className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border shadow-[0_40px_80px_-40px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
+          <img
+            src={heroInnovation}
+            alt="Robotics, semiconductors and sustainability — the future of Indian manufacturing"
+            className="h-[320px] w-full object-cover sm:h-[420px]"
+            width={1280}
+            height={420}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
+            <div className="text-background mix-blend-difference">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">Powered by</div>
+              <div className="text-2xl font-black tracking-tight sm:text-3xl">NAMTECH · India's Manufacturing Frontier</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
