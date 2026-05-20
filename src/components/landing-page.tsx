@@ -13,6 +13,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import {
   Trophy,
   Award,
   Briefcase,
@@ -774,6 +780,32 @@ function Footer() {
   );
 }
 
+function StickyApply() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <Button
+            size="lg"
+            className="h-14 rounded-full px-8 text-base font-bold shadow-[0_12px_40px_-10px_color-mix(in_oklab,var(--primary)_50%,transparent)] transition-transform hover:scale-105"
+          >
+            Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="bottom" className="mx-auto max-h-[85vh] max-w-xl rounded-t-3xl border-border bg-card p-0">
+          <div className="sr-only">
+            <SheetTitle>Apply Now</SheetTitle>
+          </div>
+          <div className="overflow-y-auto p-6">
+            <RegistrationCard />
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
+}
+
 export function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -791,6 +823,7 @@ export function LandingPage() {
         <FinalCTA />
       </main>
       <Footer />
+      <StickyApply />
     </div>
   );
 }
