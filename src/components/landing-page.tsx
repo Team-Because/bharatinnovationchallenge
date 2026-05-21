@@ -673,8 +673,6 @@ function Timeline() {
       blurb: "Two days on campus: pitch to the jury, tour labs, meet founders, and walk away with prizes & internship offers.",
     },
   ];
-  const [active, setActive] = useState(0);
-  const Current = phases[active].icon;
   return (
     <section className="relative overflow-hidden border-t border-border bg-secondary/40">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,hsl(var(--primary)/0.08),transparent_50%)]" />
@@ -684,96 +682,57 @@ function Timeline() {
           Four phases. One shot.
         </h2>
         <p className="mt-3 max-w-xl text-muted-foreground">
-          Tap a phase to see what happens. Specific dates drop soon — registrations stay open until then.
+          Here is exactly how the season unfolds. Specific dates drop soon — registrations stay open until then.
         </p>
 
-        {/* Track */}
-        <div className="relative mt-14">
-          {/* base line */}
-          <div className="absolute left-0 right-0 top-7 z-0 hidden h-0.5 bg-border md:block" />
-          {/* progress line */}
-          <div
-            className="absolute left-0 top-7 z-0 hidden h-0.5 bg-gradient-to-r from-primary to-primary/60 transition-all duration-500 ease-out md:block"
-            style={{ width: `${(active / (phases.length - 1)) * 100}%` }}
-          />
+        {/* Zigzag timeline with central spine */}
+        <div className="relative mt-16">
+          {/* central spine (md+) */}
+          <div className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/40 to-transparent md:block" />
+          {/* left rail (mobile) */}
+          <div className="pointer-events-none absolute left-6 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent md:hidden" />
 
-          <div className="grid gap-10 md:grid-cols-4 md:gap-4">
+          <ol className="space-y-10 md:space-y-16">
             {phases.map((p, i) => {
               const Icon = p.icon;
-              const isActive = i === active;
-              const isDone = i < active;
+              const isLeft = i % 2 === 0;
               return (
-                <button
-                  key={p.label}
-                  onClick={() => setActive(i)}
-                  className="group relative z-10 flex flex-col items-center text-center focus:outline-none"
-                >
-                  <span
-                    className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-2 transition-all duration-300 ${
-                      isActive
-                        ? "scale-110 border-primary bg-primary text-primary-foreground shadow-[0_0_0_6px_hsl(var(--primary)/0.15)]"
-                        : isDone
-                        ? "border-primary bg-background text-primary"
-                        : "border-border bg-background text-muted-foreground group-hover:border-primary/60 group-hover:text-foreground"
-                    }`}
-                  >
-                    {isDone && (
-                      <span className="absolute inset-0 rounded-full bg-primary/15" />
-                    )}
-                    <Icon className="h-6 w-6" />
-                    {isActive && (
-                      <span className="absolute inset-0 animate-ping rounded-full bg-primary/30" />
-                    )}
+                <li key={p.label} className="relative">
+                  {/* node */}
+                  <span className="absolute left-6 top-6 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-4 border-secondary/40 bg-primary text-primary-foreground shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_18%,transparent)] md:left-1/2 md:top-1/2 md:h-14 md:w-14 md:-translate-y-1/2">
+                    <Icon className="h-5 w-5 md:h-6 md:w-6" />
                   </span>
+
                   <div
-                    className={`mt-4 text-[11px] font-bold uppercase tracking-[0.16em] transition-colors ${
-                      isActive ? "text-primary" : "text-muted-foreground"
+                    className={`pl-16 md:pl-0 md:grid md:grid-cols-2 md:gap-12 ${
+                      isLeft ? "" : ""
                     }`}
                   >
-                    Phase 0{i + 1}
+                    {/* Card slot */}
+                    <div className={`${isLeft ? "md:col-start-1 md:pr-12 md:text-right" : "md:col-start-2 md:pl-12"}`}>
+                      <div className="group relative rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_50px_-25px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-7">
+                        <div className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-primary ${isLeft ? "md:justify-end" : ""}`}>
+                          <span>Phase 0{i + 1}</span>
+                          <span className="h-1 w-1 rounded-full bg-primary/40" />
+                          <span className="text-muted-foreground">{p.date}</span>
+                        </div>
+                        <h3 className="mt-2 text-xl font-black tracking-tight sm:text-2xl">{p.label}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.blurb}</p>
+                        <span
+                          aria-hidden
+                          className={`pointer-events-none absolute bottom-2 select-none text-6xl font-black leading-none tracking-tighter text-primary/10 sm:text-7xl ${
+                            isLeft ? "right-4" : "left-4"
+                          }`}
+                        >
+                          0{i + 1}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div
-                    className={`mt-1 text-sm font-semibold leading-snug transition-colors ${
-                      isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
-                    }`}
-                  >
-                    {p.label}
-                  </div>
-                </button>
+                </li>
               );
             })}
-          </div>
-        </div>
-
-        {/* Active detail card */}
-        <div
-          key={active}
-          className="mt-12 grid animate-fade-in gap-6 rounded-3xl border border-border bg-card p-6 sm:p-8 md:grid-cols-[auto_1fr_auto] md:items-center"
-        >
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-            <Current className="h-8 w-8" />
-          </div>
-          <div>
-            <div className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
-              Phase 0{active + 1} of 0{phases.length}
-            </div>
-            <h3 className="mt-1 text-2xl font-black tracking-tight sm:text-3xl">
-              {phases[active].label}
-            </h3>
-            <p className="mt-2 max-w-2xl text-muted-foreground">{phases[active].blurb}</p>
-          </div>
-          <div className="flex items-center gap-3 md:flex-col md:items-end">
-            <div className="text-right">
-              <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Date</div>
-              <div className="text-2xl font-black tracking-tight">{phases[active].date}</div>
-            </div>
-            <button
-              onClick={() => setActive((a) => (a + 1) % phases.length)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold transition-colors hover:border-primary hover:text-primary"
-            >
-              Next phase <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
+          </ol>
         </div>
       </div>
     </section>
