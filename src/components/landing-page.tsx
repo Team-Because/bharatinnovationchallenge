@@ -132,9 +132,6 @@ function Hero() {
                 Register Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="h-12 rounded-full border-foreground/15 px-7 text-base">
-              <a href="#overview">Learn more</a>
-            </Button>
           </div>
 
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
