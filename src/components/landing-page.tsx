@@ -516,8 +516,6 @@ function Process() {
       time: "5 min",
     },
   ];
-  const [active, setActive] = useState(0);
-  const Current = steps[active].icon;
   return (
     <section id="process" className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -528,86 +526,55 @@ function Process() {
               Three steps. About 10 minutes.
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Tap any step to see exactly what happens. No surprises, no fine print.
+              Exactly what happens at each step. No surprises, no fine print.
             </p>
           </div>
         </div>
 
-        <div className="relative mt-12">
-          {/* connector base */}
-          <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-1 rounded-full bg-border md:block" />
-          {/* animated progress */}
-          <div
-            className="pointer-events-none absolute left-0 top-9 hidden h-1 rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-500 ease-out md:block"
-            style={{ width: `${((active + 1) / steps.length) * 100}%` }}
-          />
+        <div className="relative mt-16 grid gap-8 md:grid-cols-3">
+          {/* vertical accent rail behind the middle card */}
+          <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/30 to-transparent md:block" />
 
-          <div className="relative grid gap-6 md:grid-cols-3">
-            {steps.map((s, i) => {
-              const Icon = s.icon;
-              const isActive = i === active;
-              const isDone = i < active;
-              return (
-                <button
-                  key={s.title}
-                  onClick={() => setActive(i)}
-                  className={`group relative flex flex-col items-start rounded-3xl border bg-card p-7 text-left transition-all duration-300 focus:outline-none ${
-                    isActive
-                      ? "-translate-y-1 border-primary shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_55%,transparent)]"
-                      : "border-border hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
-                  }`}
+          {steps.map((s, i) => {
+            const Icon = s.icon;
+            const offset = i === 1 ? "md:mt-16" : i === 2 ? "md:mt-8" : "";
+            return (
+              <div
+                key={s.title}
+                className={`group relative ${offset}`}
+              >
+                {/* giant outline numeral */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -top-10 right-2 select-none text-[8rem] font-black leading-none tracking-tighter text-primary/10"
+                  style={{ WebkitTextStroke: "1px color-mix(in oklab, var(--primary) 35%, transparent)", color: "transparent" }}
                 >
-                  <div className="flex w-full items-center justify-between">
-                    <span
-                      className={`relative flex h-[72px] w-[72px] items-center justify-center rounded-2xl transition-all duration-300 ${
-                        isActive
-                          ? "scale-110 bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_18%,transparent)]"
-                          : isDone
-                          ? "bg-primary/15 text-primary"
-                          : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
-                      }`}
-                    >
-                      {isDone ? <Check className="h-7 w-7" /> : <Icon className="h-7 w-7" />}
-                      {isActive && (
-                        <span className="absolute inset-0 animate-ping rounded-2xl bg-primary/25" />
-                      )}
-                    </span>
-                    <span
-                      className={`text-5xl font-black tracking-tight transition-colors ${
-                        isActive ? "text-primary/30" : "text-primary/10"
-                      }`}
-                    >
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                    <span className={isActive ? "text-primary" : ""}>Step 0{i + 1}</span>
-                    <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
-                    <span>{s.time}</span>
-                  </div>
-                  <h3 className="mt-2 text-xl font-bold">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                  <div
-                    className={`grid w-full transition-all duration-500 ease-out ${
-                      isActive ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="overflow-hidden">
-                      <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-sm leading-relaxed text-foreground">
-                        {s.detail}
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+                  0{i + 1}
+                </span>
 
-        <div className="mt-8 rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground">
-          <span className="font-semibold text-foreground">Required submissions:</span>{" "}
-          2-Minute Elevator Pitch Video · 5-Slide Project Presentation (PDF) · ₹1
-          Payment Confirmation Screenshot / Receipt.
+                <div className="relative flex h-full flex-col rounded-3xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_15%,transparent)]">
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <span className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
+                      {s.time}
+                    </span>
+                  </div>
+
+                  <div className="mt-6 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                    Step 0{i + 1}
+                  </div>
+                  <h3 className="mt-1 text-xl font-bold">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+
+                  <div className="mt-5 flex-1 rounded-xl border border-dashed border-primary/25 bg-primary/5 p-4 text-sm leading-relaxed text-foreground">
+                    {s.detail}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
