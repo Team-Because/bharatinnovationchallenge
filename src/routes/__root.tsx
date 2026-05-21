@@ -88,6 +88,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Bharat Innovation Challenge — NAMTECH" },
+      { name: "description", content: "Landing Page Studio builds engaging, visually-rich landing pages with interactive elements." },
+      { property: "og:description", content: "Landing Page Studio builds engaging, visually-rich landing pages with interactive elements." },
+      { name: "twitter:description", content: "Landing Page Studio builds engaging, visually-rich landing pages with interactive elements." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/172f364f-9481-449a-a582-9a53a888e499/id-preview-6b784c79--6ed65897-bc89-40cf-857b-c2ef3c53bd86.lovable.app-1779349029458.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/172f364f-9481-449a-a582-9a53a888e499/id-preview-6b784c79--6ed65897-bc89-40cf-857b-c2ef3c53bd86.lovable.app-1779349029458.png" },
     ],
     links: [
       {
