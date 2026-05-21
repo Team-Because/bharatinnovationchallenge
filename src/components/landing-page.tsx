@@ -13,6 +13,7 @@ import trackDataAi from "@/assets/track-data-ai.jpg";
 import trackRobotics from "@/assets/track-robotics.jpg";
 import trackAutomotive from "@/assets/track-automotive.jpg";
 import trackOpenInnovation from "@/assets/track-open-innovation.jpg";
+import namtechLogo from "@/assets/namtech-logo.png";
 import {
   Accordion,
   AccordionContent,
@@ -62,19 +63,13 @@ import {
 
 function NamtechMark() {
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex items-baseline text-xl font-black tracking-tight text-foreground">
-        <span>NAM</span>
-        <span className="text-primary">:</span>
-        <span>TECH</span>
-      </div>
-      <div className="hidden h-6 w-px bg-border sm:block" />
-      <div className="hidden text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground sm:block">
-        Institute of
-        <br />
-        Manufacturing Innovation
-      </div>
-    </div>
+    <img
+      src={namtechLogo}
+      alt="NAMTECH — Institute of Manufacturing Innovation"
+      width={1920}
+      height={400}
+      className="h-8 w-auto sm:h-10"
+    />
   );
 }
 
