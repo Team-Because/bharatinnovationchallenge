@@ -685,50 +685,30 @@ function Timeline() {
           Here is exactly how the season unfolds. Specific dates drop soon — registrations stay open until then.
         </p>
 
-        {/* Zigzag timeline with central spine */}
+        {/* Minimal horizontal timeline */}
         <div className="relative mt-16">
-          {/* central spine (md+) */}
-          <div className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/40 to-transparent md:block" />
-          {/* left rail (mobile) */}
-          <div className="pointer-events-none absolute left-6 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent md:hidden" />
+          {/* connector line through icons */}
+          <div className="pointer-events-none absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent md:block" />
 
-          <ol className="space-y-10 md:space-y-16">
+          <ol className="grid gap-12 md:grid-cols-4 md:gap-8">
             {phases.map((p, i) => {
               const Icon = p.icon;
-              const isLeft = i % 2 === 0;
               return (
-                <li key={p.label} className="relative">
+                <li key={p.label} className="relative flex flex-col">
                   {/* node */}
-                  <span className="absolute left-6 top-6 z-10 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border-4 border-secondary/40 bg-primary text-primary-foreground shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_18%,transparent)] md:left-1/2 md:top-1/2 md:h-14 md:w-14 md:-translate-y-1/2">
-                    <Icon className="h-5 w-5 md:h-6 md:w-6" />
+                  <span className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-sm md:mx-0">
+                    <Icon className="h-5 w-5" />
+                    <span className="absolute -inset-1 -z-10 rounded-full bg-primary/5" />
                   </span>
 
-                  <div
-                    className={`pl-16 md:pl-0 md:grid md:grid-cols-2 md:gap-12 ${
-                      isLeft ? "" : ""
-                    }`}
-                  >
-                    {/* Card slot */}
-                    <div className={`${isLeft ? "md:col-start-1 md:pr-12 md:text-right" : "md:col-start-2 md:pl-12"}`}>
-                      <div className="group relative rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_50px_-25px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-7">
-                        <div className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-primary ${isLeft ? "md:justify-end" : ""}`}>
-                          <span>Phase 0{i + 1}</span>
-                          <span className="h-1 w-1 rounded-full bg-primary/40" />
-                          <span className="text-muted-foreground">{p.date}</span>
-                        </div>
-                        <h3 className="mt-2 text-xl font-black tracking-tight sm:text-2xl">{p.label}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.blurb}</p>
-                        <span
-                          aria-hidden
-                          className={`pointer-events-none absolute bottom-2 select-none text-6xl font-black leading-none tracking-tighter text-primary/10 sm:text-7xl ${
-                            isLeft ? "right-4" : "left-4"
-                          }`}
-                        >
-                          0{i + 1}
-                        </span>
-                      </div>
-                    </div>
+                  <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                    <span className="tabular-nums">0{i + 1}</span>
+                    <span className="h-px w-6 bg-primary/40" />
+                    <span className="text-muted-foreground">{p.date}</span>
                   </div>
+
+                  <h3 className="mt-2 text-lg font-bold tracking-tight sm:text-xl">{p.label}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.blurb}</p>
                 </li>
               );
             })}
