@@ -685,35 +685,48 @@ function Timeline() {
           Here is exactly how the season unfolds. Specific dates drop soon — registrations stay open until then.
         </p>
 
-        {/* Minimal horizontal timeline */}
-        <div className="relative mt-16">
-          {/* connector line through icons */}
-          <div className="pointer-events-none absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent md:block" />
+        {/* Editorial timeline — giant outlined numerals as the spine */}
+        <ol className="mt-16 divide-y divide-border border-y border-border">
+          {phases.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <li
+                key={p.label}
+                className="group grid grid-cols-[auto_1fr] items-center gap-6 py-8 transition-colors sm:grid-cols-[auto_auto_1fr_auto] sm:gap-10"
+              >
+                {/* Giant outlined numeral */}
+                <span
+                  aria-hidden
+                  className="select-none text-[3.5rem] font-black leading-none tracking-tighter text-transparent transition-all duration-300 sm:text-[5rem] group-hover:[--tw-text-opacity:1]"
+                  style={{
+                    WebkitTextStroke: "1.5px color-mix(in oklab, var(--primary) 55%, transparent)",
+                  }}
+                >
+                  0{i + 1}
+                </span>
 
-          <ol className="grid gap-12 md:grid-cols-4 md:gap-8">
-            {phases.map((p, i) => {
-              const Icon = p.icon;
-              return (
-                <li key={p.label} className="relative flex flex-col">
-                  {/* node */}
-                  <span className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-primary/30 bg-background text-primary shadow-sm md:mx-0">
-                    <Icon className="h-5 w-5" />
-                    <span className="absolute -inset-1 -z-10 rounded-full bg-primary/5" />
+                {/* Icon node */}
+                <span className="hidden h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/20 transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground sm:inline-flex">
+                  <Icon className="h-5 w-5" />
+                </span>
+
+                {/* Label + blurb */}
+                <div className="min-w-0">
+                  <h3 className="text-xl font-black tracking-tight sm:text-2xl">{p.label}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground sm:max-w-xl">{p.blurb}</p>
+                </div>
+
+                {/* Date pill */}
+                <div className="col-span-2 flex items-center sm:col-span-1 sm:justify-end">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-foreground transition-colors group-hover:border-primary/40 group-hover:text-primary">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                    {p.date}
                   </span>
-
-                  <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
-                    <span className="tabular-nums">0{i + 1}</span>
-                    <span className="h-px w-6 bg-primary/40" />
-                    <span className="text-muted-foreground">{p.date}</span>
-                  </div>
-
-                  <h3 className="mt-2 text-lg font-bold tracking-tight sm:text-xl">{p.label}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.blurb}</p>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );
