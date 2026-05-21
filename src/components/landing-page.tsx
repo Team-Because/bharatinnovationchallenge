@@ -875,7 +875,6 @@ export function LandingPage() {
         <FinalCTA />
       </main>
       <Footer />
-      <StickyApply />
     </div>
   );
 }
