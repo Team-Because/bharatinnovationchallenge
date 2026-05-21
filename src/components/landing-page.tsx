@@ -531,46 +531,44 @@ function Process() {
           </div>
         </div>
 
-        <div className="relative mt-16 grid gap-8 md:grid-cols-3">
-          {/* vertical accent rail behind the middle card */}
-          <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/30 to-transparent md:block" />
-
+        <div className="mt-12 flex flex-col gap-5">
           {steps.map((s, i) => {
             const Icon = s.icon;
-            const offset = i === 1 ? "md:mt-16" : i === 2 ? "md:mt-8" : "";
             return (
               <div
                 key={s.title}
-                className={`group relative ${offset}`}
+                className="group relative grid gap-6 rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_20px_50px_-25px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8 md:grid-cols-[auto_1fr_auto] md:items-center"
               >
-                {/* giant outline numeral */}
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -top-10 right-2 select-none text-[8rem] font-black leading-none tracking-tighter text-primary/10"
-                  style={{ WebkitTextStroke: "1px color-mix(in oklab, var(--primary) 35%, transparent)", color: "transparent" }}
-                >
-                  0{i + 1}
-                </span>
-
-                <div className="relative flex h-full flex-col rounded-3xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_50px_-20px_color-mix(in_oklab,var(--primary)_45%,transparent)]">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_15%,transparent)]">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <span className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-                      {s.time}
+                {/* Step number + icon */}
+                <div className="flex items-center gap-5">
+                  <div className="relative">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_12%,transparent)]">
+                      <Icon className="h-7 w-7" />
                     </span>
                   </div>
+                  <span
+                    aria-hidden
+                    className="select-none text-6xl font-black leading-none tracking-tighter md:text-7xl"
+                    style={{ WebkitTextStroke: "1.5px color-mix(in oklab, var(--primary) 45%, transparent)", color: "transparent" }}
+                  >
+                    0{i + 1}
+                  </span>
+                </div>
 
-                  <div className="mt-6 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
-                    Step 0{i + 1}
+                {/* Text */}
+                <div className="md:px-4">
+                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-primary">
+                    <span>Step 0{i + 1}</span>
+                    <span className="h-1 w-1 rounded-full bg-primary/40" />
+                    <span className="text-muted-foreground">{s.time}</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  <h3 className="mt-1 text-xl font-bold sm:text-2xl">{s.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                </div>
 
-                  <div className="mt-5 flex-1 rounded-xl border border-dashed border-primary/25 bg-primary/5 p-4 text-sm leading-relaxed text-foreground">
-                    {s.detail}
-                  </div>
+                {/* Detail */}
+                <div className="rounded-2xl border border-dashed border-primary/25 bg-primary/5 p-4 text-sm leading-relaxed text-foreground md:max-w-xs">
+                  {s.detail}
                 </div>
               </div>
             );
