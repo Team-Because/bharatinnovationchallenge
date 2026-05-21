@@ -102,7 +102,7 @@ function Nav() {
           <a href="#faq" className="hover:text-foreground">FAQs</a>
         </nav>
         <Button asChild size="sm" className="rounded-full px-5">
-          <a href="#register">Register · ₹1</a>
+          <a href="#register">Register</a>
         </Button>
       </div>
     </header>
@@ -129,7 +129,7 @@ function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="h-12 rounded-full px-7 text-base font-semibold">
               <a href="#register">
-                Register Now for ₹1 <ArrowRight className="ml-1 h-4 w-4" />
+                Register Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-12 rounded-full border-foreground/15 px-7 text-base">
@@ -139,7 +139,7 @@ function Hero() {
 
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
             {[
-              { k: "₹1", v: "Registration" },
+              { k: "Free", v: "Registration" },
               { k: "₹1.03L", v: "Prize Pool" },
               { k: "7", v: "Innovation Tracks" },
             ].map((s) => (
@@ -168,7 +168,7 @@ function RegistrationCard() {
       </div>
       <h2 className="mt-2 text-3xl font-black tracking-tight">Claim your spot</h2>
       <p className="mt-1 text-sm text-muted-foreground">
-        Just ₹1 to register. Quick form. No commitments after.
+        Quick form. No commitments after.
       </p>
 
       {submitted ? (
@@ -176,7 +176,7 @@ function RegistrationCard() {
           <CheckCircle2 className="h-6 w-6 text-primary" />
           <h3 className="mt-3 text-lg font-bold">You're on the list.</h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Check your inbox for next steps and the ₹1 payment QR.
+            Check your inbox for next steps.
           </p>
         </div>
       ) : (
@@ -220,7 +220,7 @@ function RegistrationCard() {
             </div>
           </div>
           <Button type="submit" size="lg" className="h-12 w-full rounded-full text-base font-semibold">
-            Submit · Pay ₹1
+            Submit
           </Button>
           <p className="text-center text-xs text-muted-foreground">
             Your details are shared only with NAMTECH admissions.
@@ -510,8 +510,8 @@ function Process() {
   const steps = [
     {
       icon: ScanLine,
-      title: "Scan & Pay ₹1",
-      desc: "Scan the QR code and complete the ₹1 registration payment. Save the confirmation screenshot.",
+      title: "Scan & Register",
+      desc: "Scan the QR code and complete the registration. Save the confirmation screenshot.",
       detail: "Use any UPI app — GPay, PhonePe, Paytm. Takes under 30 seconds. Screenshot the success page; you'll attach it in step 3.",
       time: "30 sec",
     },
@@ -525,8 +525,8 @@ function Process() {
     {
       icon: FileUp,
       title: "Upload Submission",
-      desc: "Submit your 2-min pitch video, 5-slide PDF, and ₹1 payment receipt.",
-      detail: "Pitch video (MP4, ≤ 200MB), slide deck (PDF, ≤ 10MB), payment screenshot (PNG/JPG). Drag & drop or browse.",
+      desc: "Submit your 2-min pitch video, 5-slide PDF, and registration confirmation.",
+      detail: "Pitch video (MP4, ≤ 200MB), slide deck (PDF, ≤ 10MB), confirmation screenshot (PNG/JPG). Drag & drop or browse.",
       time: "5 min",
     },
   ];
@@ -647,7 +647,7 @@ function Timeline() {
       label: "Registration Opens",
       date: "TBD",
       icon: Rocket,
-      blurb: "Sign up with ₹1 to lock your slot. Get instant access to submission guidelines and the project brief.",
+      blurb: "Sign up to lock your slot. Get instant access to submission guidelines and the project brief.",
     },
     {
       label: "Submission Deadline",
@@ -734,12 +734,12 @@ function FAQs() {
       a: "B.Tech / BE students from across India graduating in 2024, 2025, or 2026 with no active backlogs.",
     },
     {
-      q: "What does the ₹1 registration cover?",
+      q: "What does the registration cover?",
       a: "It confirms your application and locks in your submission slot. Shortlisted candidates get a fully sponsored 2-day Grand Finale experience at NAMTECH.",
     },
     {
       q: "What do I need to submit?",
-      a: "A 2-minute elevator pitch video, a maximum 5-slide PDF presentation of your project, and your ₹1 payment confirmation screenshot.",
+      a: "A 2-minute elevator pitch video, a maximum 5-slide PDF presentation of your project, and your registration confirmation screenshot.",
     },
     {
       q: "Can I submit a team project?",
@@ -802,7 +802,7 @@ function FinalCTA() {
             Your innovation deserves a national stage.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-primary-foreground/80">
-            Register now for just ₹1 and take your idea to the Grand Finale at NAMTECH.
+            Register now and take your idea to the Grand Finale at NAMTECH.
           </p>
           <div className="mt-9">
             <Button asChild size="lg" variant="secondary" className="h-14 rounded-full bg-background px-9 text-base font-bold text-foreground hover:bg-background/90">
