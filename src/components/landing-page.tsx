@@ -327,104 +327,123 @@ function Why() {
 
 function Rewards() {
   const prizes = [
-    { place: "1st Prize", amount: "₹51,000", tone: "text-primary" },
-    { place: "2nd Prize", amount: "₹31,000", tone: "text-foreground" },
-    { place: "3rd Prize", amount: "₹21,000", tone: "text-foreground" },
+    { place: "2nd Prize", amount: "₹31,000", rank: 2, icon: Medal, height: "h-44 sm:h-52", accent: "bg-primary-foreground/10" },
+    { place: "1st Prize", amount: "₹51,000", rank: 1, icon: Trophy, height: "h-60 sm:h-72", accent: "bg-primary-foreground" },
+    { place: "3rd Prize", amount: "₹21,000", rank: 3, icon: Award, height: "h-36 sm:h-44", accent: "bg-primary-foreground/10" },
   ];
   return (
     <section id="rewards" className="border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/60">
-          Rewards & Recognition
-        </p>
-        <h2 className="mt-3 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
-          Every shortlisted participant wins something real.
-        </h2>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/60">
+              Rewards & Recognition
+            </p>
+            <h2 className="mt-3 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
+              Every shortlisted participant wins something real.
+            </h2>
+          </div>
+          <div className="inline-flex items-center gap-3 self-start rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-2 backdrop-blur sm:self-end">
+            <Sparkles className="h-4 w-4" />
+            <span className="text-sm font-semibold">₹1,03,000 total prize pool</span>
+          </div>
+        </div>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
-          <div className="flex flex-col items-center justify-center rounded-3xl border border-border bg-background p-8 text-center text-foreground">
-            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              All Shortlisted Participants Receive
-            </div>
-            <h3 className="mt-3 text-2xl font-bold">
-              2-Day Fully Sponsored NAMTECH Experience Pass
-            </h3>
-            <p className="mt-1 text-sm text-muted-foreground">Travel + accommodation included</p>
+        {/* Podium */}
+        <div className="mt-14">
+          <div className="grid items-end gap-5 sm:grid-cols-3">
+            {prizes.map((p) => {
+              const Icon = p.icon;
+              const isFirst = p.rank === 1;
+              return (
+                <div key={p.place} className="flex flex-col items-center">
+                  {isFirst && (
+                    <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-lg">
+                      <Sparkles className="h-3.5 w-3.5" /> Top Winner
+                    </div>
+                  )}
+                  <div
+                    className={`relative flex w-full flex-col items-center justify-end rounded-t-3xl px-6 pb-7 pt-8 text-center ${p.height} ${
+                      isFirst
+                        ? "bg-primary-foreground text-primary shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.45)]"
+                        : "bg-primary-foreground/10 text-primary-foreground ring-1 ring-inset ring-primary-foreground/15"
+                    }`}
+                  >
+                    <span
+                      className={`absolute -top-7 flex h-14 w-14 items-center justify-center rounded-full shadow-md ${
+                        isFirst
+                          ? "bg-primary text-primary-foreground ring-4 ring-primary-foreground"
+                          : "bg-primary-foreground/15 text-primary-foreground ring-2 ring-primary-foreground/20 backdrop-blur"
+                      }`}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <div className={`text-[10px] font-bold uppercase tracking-[0.18em] ${isFirst ? "text-primary/60" : "text-primary-foreground/60"}`}>
+                      {p.place}
+                    </div>
+                    <div className={`mt-1 font-black tracking-tight ${isFirst ? "text-5xl sm:text-6xl" : "text-3xl sm:text-4xl"}`}>
+                      {p.amount}
+                    </div>
+                    <div className={`mt-2 text-xs ${isFirst ? "text-primary/60" : "text-primary-foreground/60"}`}>
+                      + Winner Certificate
+                    </div>
+                    <div
+                      aria-hidden
+                      className={`absolute bottom-3 right-4 select-none text-5xl font-black leading-none tracking-tighter ${
+                        isFirst ? "text-primary/10" : "text-primary-foreground/15"
+                      }`}
+                    >
+                      0{p.rank}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {/* podium plinth */}
+          <div className="h-3 rounded-b-2xl bg-primary-foreground/20" />
+        </div>
 
-            <div className="mt-5 w-full overflow-hidden rounded-2xl border border-border">
+        {/* Experience Pass — full-width feature panel */}
+        <div className="mt-12 overflow-hidden rounded-3xl border border-primary-foreground/15 bg-primary-foreground text-foreground shadow-2xl">
+          <div className="grid lg:grid-cols-[1.1fr_1fr]">
+            <div className="relative min-h-[260px]">
               <img
                 src={campusNamtech}
                 alt="NAMTECH campus — advanced manufacturing institute"
                 loading="lazy"
                 width={1280}
                 height={720}
-                className="h-40 w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/60 via-primary/20 to-transparent" />
+              <div className="absolute bottom-5 left-5 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-primary backdrop-blur">
+                <CheckCircle2 className="h-3.5 w-3.5" /> Every Shortlisted Participant
+              </div>
             </div>
+            <div className="p-8 sm:p-10">
+              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                All Shortlisted Participants Receive
+              </div>
+              <h3 className="mt-2 text-2xl font-black sm:text-3xl">
+                2-Day Fully Sponsored NAMTECH Experience Pass
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">Travel + accommodation included</p>
 
-            <div className="mt-7 w-full space-y-4 text-left">
-              {[
-                { day: "Day 1", title: "Grand Finale Participation" },
-                { day: "Day 2", title: "Exclusive NAMTECH Campus Experience" },
-                { day: "+", title: "Participation E-Certificate" },
-              ].map((d) => (
-                <div key={d.title} className="flex items-start gap-4 border-t border-border pt-4 first:border-t-0 first:pt-0">
-                  <div className="mt-0.5 inline-flex h-9 w-12 items-center justify-center rounded-md bg-muted text-xs font-bold text-foreground">
-                    {d.day}
+              <div className="mt-6 space-y-3">
+                {[
+                  { day: "Day 1", title: "Grand Finale Participation" },
+                  { day: "Day 2", title: "Exclusive NAMTECH Campus Experience" },
+                  { day: "+", title: "Participation E-Certificate" },
+                ].map((d) => (
+                  <div key={d.title} className="flex items-center gap-4 rounded-2xl border border-border bg-secondary/40 p-3">
+                    <div className="inline-flex h-10 w-14 shrink-0 items-center justify-center rounded-lg bg-primary text-xs font-bold text-primary-foreground">
+                      {d.day}
+                    </div>
+                    <div className="text-sm font-semibold sm:text-base">{d.title}</div>
                   </div>
-                  <div className="text-base font-semibold">{d.title}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center rounded-3xl border border-border bg-background p-8 text-center text-foreground">
-            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Grand Finale Winner Prizes
-            </div>
-            <div className="mt-6 w-full space-y-4">
-              {prizes.map((p, i) => {
-                const isFirst = i === 0;
-                return (
-                  <div
-                    key={p.place}
-                    className={`flex flex-col items-center justify-center rounded-2xl text-foreground ${
-                      isFirst
-                        ? "bg-primary/10 p-8 ring-2 ring-primary/30"
-                        : "bg-muted p-5"
-                    }`}
-                  >
-                    <div
-                      className={`flex items-center justify-center rounded-full bg-primary/10 font-black text-primary ${
-                        isFirst ? "h-14 w-14 text-xl" : "h-10 w-10 text-sm"
-                      }`}
-                    >
-                      {i + 1}
-                    </div>
-                    <div
-                      className={`mt-3 uppercase tracking-wider text-muted-foreground ${
-                        isFirst ? "text-sm font-semibold" : "text-xs"
-                      }`}
-                    >
-                      {p.place}
-                    </div>
-                    <div
-                      className={`text-muted-foreground ${
-                        isFirst ? "text-sm" : "text-xs"
-                      }`}
-                    >
-                      + Winner Certificate
-                    </div>
-                    <div
-                      className={`mt-3 font-black tracking-tight ${p.tone} ${
-                        isFirst ? "text-5xl sm:text-6xl" : "text-2xl"
-                      }`}
-                    >
-                      {p.amount}
-                    </div>
-                  </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </div>
         </div>
