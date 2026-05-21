@@ -13,6 +13,7 @@ import trackDataAi from "@/assets/track-data-ai.jpg";
 import trackRobotics from "@/assets/track-robotics.jpg";
 import trackAutomotive from "@/assets/track-automotive.jpg";
 import trackOpenInnovation from "@/assets/track-open-innovation.jpg";
+import namtechLogo from "@/assets/namtech-logo.png";
 import {
   Accordion,
   AccordionContent,
