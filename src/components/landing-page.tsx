@@ -589,7 +589,7 @@ function Eligibility() {
   ];
   return (
     <section className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-end gap-12 px-6 py-16 lg:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Eligibility</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
@@ -610,7 +610,7 @@ function Eligibility() {
             />
           </div>
         </div>
-        <div className="lg:pt-20">
+        <div>
           <div className="rounded-3xl border border-border bg-card p-8">
             <ul className="space-y-5">
               {checks.map((c) => (
