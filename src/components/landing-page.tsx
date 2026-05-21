@@ -358,7 +358,7 @@ function Rewards() {
               return (
                 <div key={p.place} className="flex flex-col items-center">
                   {isFirst && (
-                    <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-lg">
+                    <div className="relative z-20 mb-10 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-lg">
                       <Sparkles className="h-3.5 w-3.5" /> Top Winner
                     </div>
                   )}
