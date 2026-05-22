@@ -636,15 +636,15 @@ function Timeline() {
     },
     {
       label: "Shortlist Announced",
-      date: "1st July",
+      date: "23rd June",
       icon: Megaphone,
       blurb: "Top teams are emailed directly. Sponsored travel & stay details follow within 48 hours of the announcement.",
     },
     {
       label: "Grand Finale @ NAMTECH",
-      date: "9th & 10th July",
+      date: "28th & 29th June",
       icon: Trophy,
-      blurb: "Two days on campus: pitch to the jury, tour labs, meet founders, and walk away with prizes & internship offers.",
+      blurb: "Two days on campus — Thursday & Friday: pitch to the jury, tour labs, meet founders, and walk away with prizes & internship offers.",
     },
   ];
   return (
@@ -656,7 +656,7 @@ function Timeline() {
           Four phases. One shot.
         </h2>
         <p className="mt-3 max-w-xl text-muted-foreground">
-          Here is exactly how the season unfolds. Mark your calendar — the Grand Finale is a 2-day event at NAMTECH.
+          Here is exactly how the season unfolds. Mark your calendar — the Grand Finale is a 2-day event at NAMTECH on 28th & 29th June.
         </p>
 
         {/* Editorial timeline — giant outlined numerals as the spine */}
