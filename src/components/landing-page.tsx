@@ -102,6 +102,16 @@ function FloatingLogo() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
+      {/* Background image positioned to the right with white gradient on the left */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <img
+          src={heroBanner}
+          alt=""
+          className="absolute right-0 top-0 h-full w-full object-cover object-right lg:w-[70%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent lg:via-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />
+      </div>
       <GridBackdrop />
       <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
         <div>
@@ -137,9 +147,7 @@ function Hero() {
           </dl>
         </div>
 
-        <div id="register" className="lg:pt-6">
-          <HeroImage />
-        </div>
+        <div id="register" aria-hidden className="hidden lg:block" />
       </div>
     </section>
   );
