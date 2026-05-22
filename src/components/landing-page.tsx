@@ -116,7 +116,7 @@ function Hero() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to right, var(--background) 0%, var(--background) 30%, color-mix(in oklab, var(--background) 75%, transparent) 50%, transparent 80%)",
+              "linear-gradient(to right, var(--background) 0%, var(--background) 24%, color-mix(in oklab, var(--background) 96%, transparent) 34%, color-mix(in oklab, var(--background) 82%, transparent) 45%, color-mix(in oklab, var(--background) 58%, transparent) 56%, color-mix(in oklab, var(--background) 30%, transparent) 68%, color-mix(in oklab, var(--background) 10%, transparent) 78%, transparent 90%)",
           }}
         />
       </div>
