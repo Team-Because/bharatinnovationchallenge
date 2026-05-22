@@ -89,23 +89,11 @@ function GridBackdrop() {
   );
 }
 
-function Nav() {
+function FloatingLogo() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <NamtechMark />
-        <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a href="#overview" className="hover:text-foreground">Overview</a>
-          <a href="#tracks" className="hover:text-foreground">Tracks</a>
-          <a href="#rewards" className="hover:text-foreground">Rewards</a>
-          <a href="#process" className="hover:text-foreground">How to Apply</a>
-          <a href="#faq" className="hover:text-foreground">FAQs</a>
-        </nav>
-        <Button asChild size="sm" className="rounded-full px-5">
-          <a href="#register">Register</a>
-        </Button>
-      </div>
-    </header>
+    <div className="absolute left-6 top-6 z-40">
+      <NamtechMark />
+    </div>
   );
 }
 
@@ -834,12 +822,12 @@ function StickyApply() {
             size="lg"
             className="h-14 rounded-full px-8 text-base font-bold shadow-[0_12px_40px_-10px_color-mix(in_oklab,var(--primary)_50%,transparent)] transition-transform hover:scale-105"
           >
-            Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+            Register Now <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </SheetTrigger>
         <SheetContent side="bottom" className="mx-auto max-h-[85vh] max-w-xl rounded-t-3xl border-border bg-card p-0">
           <div className="sr-only">
-            <SheetTitle>Apply Now</SheetTitle>
+            <SheetTitle>Register Now</SheetTitle>
           </div>
           <div className="overflow-y-auto p-6">
             <RegistrationCard />
@@ -853,7 +841,7 @@ function StickyApply() {
 export function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
-      <Nav />
+      <FloatingLogo />
       <main>
         <Hero />
         <Overview />
@@ -866,7 +854,7 @@ export function LandingPage() {
         <FAQs />
         <FinalCTA />
       </main>
-      <Footer />
+      <StickyApply />
     </div>
   );
 }
