@@ -103,17 +103,20 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       {/* Background image positioned to the right with white gradient on the left */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
-        <img
-          src={heroBanner}
-          alt=""
-          className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-contain object-right"
-        />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 bg-no-repeat"
+        style={{
+          backgroundImage: `url(${heroBanner})`,
+          backgroundPosition: "right center",
+          backgroundSize: "contain",
+        }}
+      >
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to right, var(--background) 0%, var(--background) 25%, color-mix(in oklab, var(--background) 70%, transparent) 50%, transparent 75%)",
+              "linear-gradient(to right, var(--background) 0%, var(--background) 30%, color-mix(in oklab, var(--background) 75%, transparent) 50%, transparent 80%)",
           }}
         />
       </div>
