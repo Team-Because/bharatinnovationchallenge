@@ -107,10 +107,9 @@ function Hero() {
         <img
           src={heroBanner}
           alt=""
-          className="absolute right-0 top-0 h-full w-full object-cover object-right lg:w-[70%]"
+          className="absolute right-0 top-0 h-full w-[85%] object-cover object-left lg:w-[65%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent lg:via-background/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background from-30% via-background/70 via-55% to-transparent to-80%" />
       </div>
       <GridBackdrop />
       <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
