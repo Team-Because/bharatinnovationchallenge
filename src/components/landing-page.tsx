@@ -739,8 +739,8 @@ function FAQs() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Still curious? Write to us at{" "}
-            <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
-              BHARATINNOVATIONCHALLENGE@namtech.ac.in
+            <a href="mailto:met@namtech.ac" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
+              met@namtech.ac
             </a>
           </p>
         </div>
@@ -807,7 +807,7 @@ function Footer() {
         <div className="flex gap-6 text-sm text-muted-foreground">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
-          <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="hover:text-foreground">Contact</a>
+          <a href="mailto:met@namtech.ac" className="hover:text-foreground">Contact</a>
         </div>
       </div>
     </footer>
