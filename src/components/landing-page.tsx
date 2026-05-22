@@ -286,7 +286,7 @@ const WHY = [
   { icon: Users, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
   { icon: TrendingUp, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
   { icon: Medal, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
-  { icon: Landmark, title: "NAMTECH Campus Experience", desc: "Step into India's premier manufacturing institute." },
+  { icon: Landmark, title: "NAMTECH Campus Experience", desc: "Step into India's premier New Age Technology Institute with world-class infrastructure across innovation tracks." },
 ];
 
 function Why() {
