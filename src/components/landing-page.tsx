@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import heroInnovation from "@/assets/hero-innovation.jpg";
+import heroInnovators from "@/assets/hero-innovators.jpg";
 import overviewEngineers from "@/assets/overview-engineers.jpg";
 import campusNamtech from "@/assets/campus-namtech.jpg";
 import eligibilityStudents from "@/assets/eligibility-students.jpg";
@@ -138,7 +139,7 @@ function Hero() {
         </div>
 
         <div id="register" className="lg:pt-6">
-          <RegistrationCard />
+          <HeroImage />
         </div>
       </div>
     </section>
@@ -146,6 +147,25 @@ function Hero() {
 }
 
 function RegistrationCard() {
+  return null;
+}
+
+function HeroImage() {
+  return (
+    <div className="relative overflow-hidden rounded-3xl border border-border shadow-[0_30px_60px_-30px_color-mix(in_oklab,var(--primary)_35%,transparent)]">
+      <img
+        src={heroInnovators}
+        alt="Young Indian engineering innovators collaborating on a prototype"
+        width={1280}
+        height={1280}
+        className="h-full w-full object-cover"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+    </div>
+  );
+}
+
+function _UnusedRegistrationCard() {
   const [submitted, setSubmitted] = useState(false);
   return (
     <div className="rounded-3xl border border-border bg-card p-7 shadow-[0_30px_60px_-30px_color-mix(in_oklab,var(--primary)_35%,transparent)]">
