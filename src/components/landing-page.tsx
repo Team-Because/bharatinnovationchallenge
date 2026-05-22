@@ -138,7 +138,7 @@ function Hero() {
         </div>
 
         <div id="register" className="lg:pt-6">
-          <RegistrationCard />
+          <HeroImage />
         </div>
       </div>
     </section>
