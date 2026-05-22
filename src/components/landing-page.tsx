@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import heroInnovation from "@/assets/hero-innovation.jpg";
 import heroBanner from "@/assets/hero-banner.png";
 import overviewEngineers from "@/assets/overview-engineers.jpg";
 import campusNamtech from "@/assets/campus-namtech.jpg";
