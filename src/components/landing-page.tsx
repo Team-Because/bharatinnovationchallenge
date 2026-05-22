@@ -510,14 +510,14 @@ function Process() {
       title: "Prepare Your Elevator Pitch Video",
       desc: "Record a crisp video pitch of your project, prototype, or startup idea.",
       detail: "MP4, up to 2 minutes, ≤ 200MB. Show the problem, your solution, and the impact. No fancy editing required — clarity wins.",
-      time: "Step 1",
+      time: "≤ 2 min video",
     },
     {
       icon: PenLine,
       title: "Prepare a Maximum 5-Slide Presentation",
       desc: "Summarise your idea in a concise deck — no more than 5 slides.",
       detail: "PDF, ≤ 10MB. Cover: problem, solution, tech, market, team. That's it — keep it sharp and visual.",
-      time: "Step 2",
+      time: "Max 5 slides",
     },
   ];
   return (
