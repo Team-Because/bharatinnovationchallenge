@@ -506,25 +506,18 @@ function Tracks() {
 function Process() {
   const steps = [
     {
-      icon: ScanLine,
-      title: "Scan & Register",
-      desc: "Scan the QR code and complete the registration. Save the confirmation screenshot.",
-      detail: "Use any UPI app — GPay, PhonePe, Paytm. Takes under 30 seconds. Screenshot the success page; you'll attach it in step 3.",
-      time: "30 sec",
+      icon: FileUp,
+      title: "Prepare Your Elevator Pitch Video",
+      desc: "Record a crisp video pitch of your project, prototype, or startup idea.",
+      detail: "MP4, up to 2 minutes, ≤ 200MB. Show the problem, your solution, and the impact. No fancy editing required — clarity wins.",
+      time: "Step 1",
     },
     {
       icon: PenLine,
-      title: "Complete Form",
-      desc: "Fill in the registration form with your academic and personal details.",
-      detail: "Name, email, mobile, college, branch, passing year. All fields are short — no essays, no uploads here.",
-      time: "2 min",
-    },
-    {
-      icon: FileUp,
-      title: "Upload Submission",
-      desc: "Submit your 2-min pitch video, 5-slide PDF, and registration confirmation.",
-      detail: "Pitch video (MP4, ≤ 200MB), slide deck (PDF, ≤ 10MB), confirmation screenshot (PNG/JPG). Drag & drop or browse.",
-      time: "5 min",
+      title: "Prepare a Maximum 5-Slide Presentation",
+      desc: "Summarise your idea in a concise deck — no more than 5 slides.",
+      detail: "PDF, ≤ 10MB. Cover: problem, solution, tech, market, team. That's it — keep it sharp and visual.",
+      time: "Step 2",
     },
   ];
   return (
