@@ -107,9 +107,15 @@ function Hero() {
         <img
           src={heroBanner}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-right"
+          className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-contain object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, var(--background) 0%, var(--background) 25%, color-mix(in oklab, var(--background) 70%, transparent) 50%, transparent 75%)",
+          }}
+        />
       </div>
       <GridBackdrop />
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
