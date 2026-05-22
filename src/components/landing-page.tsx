@@ -624,25 +624,25 @@ function Timeline() {
   const phases = [
     {
       label: "Registration Opens",
-      date: "TBD",
+      date: "25th May",
       icon: Rocket,
       blurb: "Sign up to lock your slot. Get instant access to submission guidelines and the project brief.",
     },
     {
       label: "Submission Deadline",
-      date: "TBD",
+      date: "20th June",
       icon: FileCheck2,
       blurb: "Submit your 2-min pitch video and 5-slide deck before the gates close. Late entries won't be considered.",
     },
     {
       label: "Shortlist Announced",
-      date: "TBD",
+      date: "1st July",
       icon: Megaphone,
       blurb: "Top teams are emailed directly. Sponsored travel & stay details follow within 48 hours of the announcement.",
     },
     {
       label: "Grand Finale @ NAMTECH",
-      date: "TBD",
+      date: "9th & 10th July",
       icon: Trophy,
       blurb: "Two days on campus: pitch to the jury, tour labs, meet founders, and walk away with prizes & internship offers.",
     },
@@ -656,7 +656,7 @@ function Timeline() {
           Four phases. One shot.
         </h2>
         <p className="mt-3 max-w-xl text-muted-foreground">
-          Here is exactly how the season unfolds. Specific dates drop soon — registrations stay open until then.
+          Here is exactly how the season unfolds. Mark your calendar — the Grand Finale is a 2-day event at NAMTECH.
         </p>
 
         {/* Editorial timeline — giant outlined numerals as the spine */}
