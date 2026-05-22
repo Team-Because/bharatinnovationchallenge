@@ -107,7 +107,7 @@ function Hero() {
         <img
           src={heroBanner}
           alt=""
-          className="absolute right-0 top-0 h-full w-[85%] object-cover object-left lg:w-[65%]"
+          className="absolute inset-0 h-full w-full object-cover object-right"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
       </div>
