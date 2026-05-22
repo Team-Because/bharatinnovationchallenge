@@ -136,6 +136,7 @@
 @layer base {
   * {
     border-color: var(--color-border);
+    font-family: "Poppins", sans-serif !important;
   }
 
   body {
