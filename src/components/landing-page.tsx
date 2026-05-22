@@ -137,7 +137,7 @@ function Hero() {
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
             {[
               { k: "Free", v: "Registration" },
-              { k: "₹1.03L", v: "Prize Pool" },
+              { k: "₹2.25L", v: "Prize Pool" },
               { k: "7", v: "Innovation Tracks" },
             ].map((s) => (
               <div key={s.v}>
@@ -282,7 +282,7 @@ function Overview() {
 
 const WHY = [
   { icon: Globe2, title: "Showcase Nationally", desc: "Stand out among India's top engineering talent." },
-  { icon: BadgeIndianRupee, title: "Win Cash Prizes", desc: "Compete for a ₹1.03L prize pool at the Grand Finale." },
+  { icon: BadgeIndianRupee, title: "Win Cash Prizes", desc: "Compete for a ₹2.25L prize pool at the Grand Finale." },
   { icon: Users, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
   { icon: TrendingUp, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
   { icon: Medal, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
@@ -337,7 +337,7 @@ function Rewards() {
           </div>
           <div className="inline-flex items-center gap-3 self-start rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-2 backdrop-blur sm:self-end">
             <Sparkles className="h-4 w-4" />
-            <span className="text-sm font-semibold">₹1,03,000 total prize pool</span>
+            <span className="text-sm font-semibold">₹2,25,000 total prize pool</span>
           </div>
         </div>
 
@@ -757,8 +757,8 @@ function FAQs() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Still curious? Write to us at{" "}
-            <a href="mailto:admissions@namtech.ac.in" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
-              admissions@namtech.ac.in
+            <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
+              BHARATINNOVATIONCHALLENGE@namtech.ac.in
             </a>
           </p>
         </div>
@@ -825,7 +825,7 @@ function Footer() {
         <div className="flex gap-6 text-sm text-muted-foreground">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
-          <a href="mailto:admissions@namtech.ac.in" className="hover:text-foreground">Contact</a>
+          <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="hover:text-foreground">Contact</a>
         </div>
       </div>
     </footer>
