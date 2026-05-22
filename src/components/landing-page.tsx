@@ -319,9 +319,9 @@ function Why() {
 
 function Rewards() {
   const prizes = [
-    { place: "2nd Prize", amount: "₹31,000", rank: 2, icon: Medal, height: "h-44 sm:h-52", accent: "bg-primary-foreground/10" },
-    { place: "1st Prize", amount: "₹51,000", rank: 1, icon: Trophy, height: "h-60 sm:h-72", accent: "bg-primary-foreground" },
-    { place: "3rd Prize", amount: "₹21,000", rank: 3, icon: Award, height: "h-36 sm:h-44", accent: "bg-primary-foreground/10" },
+    { place: "2nd Prize", amount: "₹75,000", rank: 2, icon: Medal, height: "h-44 sm:h-52", accent: "bg-primary-foreground/10" },
+    { place: "1st Prize", amount: "₹1,00,000", rank: 1, icon: Trophy, height: "h-60 sm:h-72", accent: "bg-primary-foreground" },
+    { place: "3rd Prize", amount: "₹50,000", rank: 3, icon: Award, height: "h-36 sm:h-44", accent: "bg-primary-foreground/10" },
   ];
   return (
     <section id="rewards" className="border-t border-border bg-primary text-primary-foreground">
