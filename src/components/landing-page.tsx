@@ -137,7 +137,7 @@ function Hero() {
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
             {[
               { k: "Free", v: "Registration" },
-              { k: "₹1.03L", v: "Prize Pool" },
+              { k: "₹2.25L", v: "Prize Pool" },
               { k: "7", v: "Innovation Tracks" },
             ].map((s) => (
               <div key={s.v}>
@@ -282,11 +282,11 @@ function Overview() {
 
 const WHY = [
   { icon: Globe2, title: "Showcase Nationally", desc: "Stand out among India's top engineering talent." },
-  { icon: BadgeIndianRupee, title: "Win Cash Prizes", desc: "Compete for a ₹1.03L prize pool at the Grand Finale." },
+  { icon: BadgeIndianRupee, title: "Win Cash Prizes", desc: "Compete for a ₹2.25L prize pool at the Grand Finale." },
   { icon: Users, title: "Gain Industry Exposure", desc: "Get seen by mentors, founders, and recruiters." },
   { icon: TrendingUp, title: "Career Opportunities", desc: "Unlock future paths across innovation ecosystems." },
   { icon: Medal, title: "National Recognition", desc: "Build a profile that travels beyond your campus." },
-  { icon: Landmark, title: "NAMTECH Campus Experience", desc: "Step into India's premier manufacturing institute." },
+  { icon: Landmark, title: "NAMTECH Campus Experience", desc: "Step into India's premier New Age Technology Institute with world-class infrastructure across innovation tracks." },
 ];
 
 function Why() {
@@ -319,9 +319,9 @@ function Why() {
 
 function Rewards() {
   const prizes = [
-    { place: "2nd Prize", amount: "₹31,000", rank: 2, icon: Medal, height: "h-44 sm:h-52", accent: "bg-primary-foreground/10" },
-    { place: "1st Prize", amount: "₹51,000", rank: 1, icon: Trophy, height: "h-60 sm:h-72", accent: "bg-primary-foreground" },
-    { place: "3rd Prize", amount: "₹21,000", rank: 3, icon: Award, height: "h-36 sm:h-44", accent: "bg-primary-foreground/10" },
+    { place: "2nd Prize", amount: "₹75,000", rank: 2, icon: Medal, height: "h-44 sm:h-52", accent: "bg-primary-foreground/10" },
+    { place: "1st Prize", amount: "₹1,00,000", rank: 1, icon: Trophy, height: "h-60 sm:h-72", accent: "bg-primary-foreground" },
+    { place: "3rd Prize", amount: "₹50,000", rank: 3, icon: Award, height: "h-36 sm:h-44", accent: "bg-primary-foreground/10" },
   ];
   return (
     <section id="rewards" className="border-t border-border bg-primary text-primary-foreground">
@@ -337,7 +337,7 @@ function Rewards() {
           </div>
           <div className="inline-flex items-center gap-3 self-start rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-2 backdrop-blur sm:self-end">
             <Sparkles className="h-4 w-4" />
-            <span className="text-sm font-semibold">₹1,03,000 total prize pool</span>
+            <span className="text-sm font-semibold">₹2,25,000 total prize pool</span>
           </div>
         </div>
 
@@ -402,7 +402,7 @@ function Rewards() {
             <div className="relative min-h-[260px]">
               <img
                 src={campusNamtech}
-                alt="NAMTECH campus — advanced manufacturing institute"
+                alt="NAMTECH campus — premier New Age Technology Institute"
                 loading="lazy"
                 width={1280}
                 height={720}
@@ -506,25 +506,18 @@ function Tracks() {
 function Process() {
   const steps = [
     {
-      icon: ScanLine,
-      title: "Scan & Register",
-      desc: "Scan the QR code and complete the registration. Save the confirmation screenshot.",
-      detail: "Use any UPI app — GPay, PhonePe, Paytm. Takes under 30 seconds. Screenshot the success page; you'll attach it in step 3.",
-      time: "30 sec",
+      icon: FileUp,
+      title: "Prepare Your Elevator Pitch Video",
+      desc: "Record a crisp video pitch of your project, prototype, or startup idea.",
+      detail: "MP4, up to 2 minutes, ≤ 200MB. Show the problem, your solution, and the impact. No fancy editing required — clarity wins.",
+      time: "≤ 2 min video",
     },
     {
       icon: PenLine,
-      title: "Complete Form",
-      desc: "Fill in the registration form with your academic and personal details.",
-      detail: "Name, email, mobile, college, branch, passing year. All fields are short — no essays, no uploads here.",
-      time: "2 min",
-    },
-    {
-      icon: FileUp,
-      title: "Upload Submission",
-      desc: "Submit your 2-min pitch video, 5-slide PDF, and registration confirmation.",
-      detail: "Pitch video (MP4, ≤ 200MB), slide deck (PDF, ≤ 10MB), confirmation screenshot (PNG/JPG). Drag & drop or browse.",
-      time: "5 min",
+      title: "Prepare a Maximum 5-Slide Presentation",
+      desc: "Summarise your idea in a concise deck — no more than 5 slides.",
+      detail: "PDF, ≤ 10MB. Cover: problem, solution, tech, market, team. That's it — keep it sharp and visual.",
+      time: "Max 5 slides",
     },
   ];
   return (
@@ -534,10 +527,10 @@ function Process() {
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Submission Process</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-              Three steps. About 10 minutes.
+              Just two steps to enter.
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Exactly what happens at each step. No surprises, no fine print.
+              No long forms. No fine print. Submit your pitch and your deck — that's it.
             </p>
           </div>
         </div>
@@ -757,8 +750,8 @@ function FAQs() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Still curious? Write to us at{" "}
-            <a href="mailto:admissions@namtech.ac.in" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
-              admissions@namtech.ac.in
+            <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
+              BHARATINNOVATIONCHALLENGE@namtech.ac.in
             </a>
           </p>
         </div>
@@ -825,7 +818,7 @@ function Footer() {
         <div className="flex gap-6 text-sm text-muted-foreground">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
-          <a href="mailto:admissions@namtech.ac.in" className="hover:text-foreground">Contact</a>
+          <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="hover:text-foreground">Contact</a>
         </div>
       </div>
     </footer>
