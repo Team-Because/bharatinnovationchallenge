@@ -841,27 +841,21 @@ function Footer() {
 }
 
 function StickyApply() {
-  const [open, setOpen] = useState(false);
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
-          <Button
-            size="lg"
-            className="h-14 rounded-full px-8 text-base font-bold shadow-[0_12px_40px_-10px_color-mix(in_oklab,var(--primary)_50%,transparent)] transition-transform hover:scale-105"
-          >
-            Register Now <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="bottom" className="mx-auto max-h-[85vh] max-w-xl rounded-t-3xl border-border bg-card p-0">
-          <div className="sr-only">
-            <SheetTitle>Register Now</SheetTitle>
-          </div>
-          <div className="overflow-y-auto p-6">
-            <RegistrationCard />
-          </div>
-        </SheetContent>
-      </Sheet>
+      <Button
+        asChild
+        size="lg"
+        className="h-14 rounded-full px-8 text-base font-bold shadow-[0_12px_40px_-10px_color-mix(in_oklab,var(--primary)_50%,transparent)] transition-transform hover:scale-105"
+      >
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSencY3qVUwUH1bSDQ04wHheAQbjN06IIQMyK5SrtUY3_0PrCg/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Register Now <ArrowRight className="ml-2 h-4 w-4" />
+        </a>
+      </Button>
     </div>
   );
 }
