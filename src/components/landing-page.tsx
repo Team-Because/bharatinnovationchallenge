@@ -105,18 +105,25 @@ function Hero() {
       {/* Background image positioned to the right with white gradient on the left */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroBanner})`,
-          backgroundPosition: "right center",
-          backgroundSize: "contain",
-        }}
+        className="pointer-events-none absolute inset-0 z-0"
       >
+        <div
+          className="absolute inset-0 bg-no-repeat"
+          style={{
+            backgroundImage: `url(${heroBanner})`,
+            backgroundPosition: "right center",
+            backgroundSize: "contain",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, transparent 24%, rgba(0,0,0,0.08) 36%, rgba(0,0,0,0.35) 48%, rgba(0,0,0,0.72) 62%, black 76%)",
+            maskImage:
+              "linear-gradient(to right, transparent 0%, transparent 24%, rgba(0,0,0,0.08) 36%, rgba(0,0,0,0.35) 48%, rgba(0,0,0,0.72) 62%, black 76%)",
+          }}
+        />
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to right, var(--background) 0%, var(--background) 30%, color-mix(in oklab, var(--background) 75%, transparent) 50%, transparent 80%)",
+              "linear-gradient(to right, var(--background) 0%, var(--background) 20%, color-mix(in oklab, var(--background) 98%, transparent) 34%, color-mix(in oklab, var(--background) 88%, transparent) 48%, color-mix(in oklab, var(--background) 66%, transparent) 62%, color-mix(in oklab, var(--background) 38%, transparent) 76%, color-mix(in oklab, var(--background) 14%, transparent) 88%, transparent 98%)",
           }}
         />
       </div>
