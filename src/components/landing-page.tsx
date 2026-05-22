@@ -739,8 +739,8 @@ function FAQs() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Still curious? Write to us at{" "}
-            <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
-              BHARATINNOVATIONCHALLENGE@namtech.ac.in
+            <a href="mailto:met@namtech.ac" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
+              met@namtech.ac
             </a>
           </p>
         </div>
