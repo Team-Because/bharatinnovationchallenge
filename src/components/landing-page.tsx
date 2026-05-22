@@ -108,7 +108,7 @@ function Hero() {
         className="pointer-events-none absolute inset-0 z-0"
       >
         <div
-          className="absolute inset-0 bg-no-repeat"
+          className="absolute inset-0 bg-no-repeat opacity-60"
           style={{
             backgroundImage: `url(${heroBanner})`,
             backgroundPosition: "right center",
