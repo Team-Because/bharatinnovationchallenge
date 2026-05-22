@@ -402,7 +402,7 @@ function Rewards() {
             <div className="relative min-h-[260px]">
               <img
                 src={campusNamtech}
-                alt="NAMTECH campus — advanced manufacturing institute"
+                alt="NAMTECH campus — premier New Age Technology Institute"
                 loading="lazy"
                 width={1280}
                 height={720}
