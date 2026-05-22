@@ -656,7 +656,7 @@ function Timeline() {
           Four phases. One shot.
         </h2>
         <p className="mt-3 max-w-xl text-muted-foreground">
-          Here is exactly how the season unfolds. Mark your calendar — the Grand Finale is a 2-day event at NAMTECH.
+          Here is exactly how the season unfolds. Mark your calendar — the Grand Finale is a 2-day event at NAMTECH on 28th & 29th June.
         </p>
 
         {/* Editorial timeline — giant outlined numerals as the spine */}
