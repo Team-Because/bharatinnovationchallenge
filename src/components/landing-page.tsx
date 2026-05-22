@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import heroInnovation from "@/assets/hero-innovation.jpg";
-import heroInnovators from "@/assets/hero-innovators.jpg";
+import heroBanner from "@/assets/hero-banner.png";
 import overviewEngineers from "@/assets/overview-engineers.jpg";
 import campusNamtech from "@/assets/campus-namtech.jpg";
 import eligibilityStudents from "@/assets/eligibility-students.jpg";
@@ -154,8 +153,8 @@ function HeroImage() {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-border shadow-[0_30px_60px_-30px_color-mix(in_oklab,var(--primary)_35%,transparent)]">
       <img
-        src={heroInnovators}
-        alt="Young Indian engineering innovators collaborating on a prototype"
+        src={heroBanner}
+        alt="Bharat Innovation Challenge Hero Banner"
         width={1280}
         height={1280}
         className="h-full w-full object-cover"
