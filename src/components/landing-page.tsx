@@ -109,7 +109,7 @@ function Hero() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       </div>
       <GridBackdrop />
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
