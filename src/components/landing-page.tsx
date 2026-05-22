@@ -101,7 +101,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <GridBackdrop />
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-16">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
         <div>
           <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             BHARAT INNOVATION
