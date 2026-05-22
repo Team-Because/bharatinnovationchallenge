@@ -807,7 +807,7 @@ function Footer() {
         <div className="flex gap-6 text-sm text-muted-foreground">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
-          <a href="mailto:BHARATINNOVATIONCHALLENGE@namtech.ac.in" className="hover:text-foreground">Contact</a>
+          <a href="mailto:met@namtech.ac" className="hover:text-foreground">Contact</a>
         </div>
       </div>
     </footer>
