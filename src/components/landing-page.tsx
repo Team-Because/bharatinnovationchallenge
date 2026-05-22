@@ -91,8 +91,10 @@ function GridBackdrop() {
 
 function FloatingLogo() {
   return (
-    <div className="absolute left-6 top-6 z-40">
-      <NamtechMark />
+    <div className="absolute inset-x-0 top-6 z-40">
+      <div className="mx-auto max-w-7xl px-6">
+        <NamtechMark />
+      </div>
     </div>
   );
 }
