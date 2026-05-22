@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import heroInnovation from "@/assets/hero-innovation.jpg";
+import heroInnovators from "@/assets/hero-innovators.jpg";
 import overviewEngineers from "@/assets/overview-engineers.jpg";
 import campusNamtech from "@/assets/campus-namtech.jpg";
 import eligibilityStudents from "@/assets/eligibility-students.jpg";
