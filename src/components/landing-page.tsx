@@ -134,9 +134,8 @@ function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
+          <dl className="mt-10 grid max-w-lg grid-cols-2 gap-6 border-t border-border pt-6">
             {[
-              { k: "Free", v: "Registration" },
               { k: "₹2.25L", v: "Prize Pool" },
               { k: "7", v: "Innovation Tracks" },
             ].map((s) => (
