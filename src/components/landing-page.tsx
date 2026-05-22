@@ -103,7 +103,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       {/* Background image positioned to the right with white gradient on the left */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <img
           src={heroBanner}
           alt=""
@@ -112,7 +112,7 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-background from-30% via-background/70 via-55% to-transparent to-80%" />
       </div>
       <GridBackdrop />
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
         <div>
           <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             BHARAT INNOVATION
