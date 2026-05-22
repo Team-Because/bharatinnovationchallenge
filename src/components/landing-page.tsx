@@ -527,10 +527,10 @@ function Process() {
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Submission Process</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-              Three steps. About 10 minutes.
+              Just two steps to enter.
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Exactly what happens at each step. No surprises, no fine print.
+              No long forms. No fine print. Submit your pitch and your deck — that's it.
             </p>
           </div>
         </div>
