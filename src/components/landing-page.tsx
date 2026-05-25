@@ -34,7 +34,6 @@ import {
   Building2,
   Cpu,
   CircuitBoard,
-  Leaf,
   Bot,
   BarChart3,
   Car,
@@ -151,7 +150,7 @@ function Hero() {
           <dl className="mt-10 grid max-w-lg grid-cols-2 gap-6 border-t border-border pt-6">
             {[
               { k: "₹2.25L", v: "Prize Pool" },
-              { k: "7", v: "Innovation Tracks" },
+              { k: "6", v: "Innovation Tracks" },
             ].map((s) => (
               <div key={s.v}>
                 <dt className="text-2xl font-black tracking-tight text-foreground">{s.k}</dt>
@@ -490,7 +489,7 @@ function Tracks() {
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Innovation Tracks</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-            Seven frontiers. Pick yours.
+            Six frontiers. Pick yours.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Submit your work under any one of these tracks — the same domains
