@@ -754,10 +754,6 @@ function FAQs() {
       a: "B.Tech / BE students from across India graduating in 2024, 2025, or 2026 with no active backlogs.",
     },
     {
-      q: "What does the registration cover?",
-      a: "It confirms your application and locks in your submission slot. Shortlisted candidates get a fully sponsored 2-day Grand Finale experience at NAMTECH.",
-    },
-    {
       q: "What do I need to submit?",
       a: "A 2-minute elevator pitch video, a maximum 5-slide PDF presentation of your project, and your registration confirmation screenshot.",
     },
