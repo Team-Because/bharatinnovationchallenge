@@ -511,7 +511,7 @@ function Tracks() {
                 loading="lazy"
                 className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/30" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/92 to-white/70" />
               <div className="relative z-10 flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
                   Track 0{i + 1}
