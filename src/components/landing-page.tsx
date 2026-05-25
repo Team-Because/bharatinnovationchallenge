@@ -12,6 +12,7 @@ import trackDataAi from "@/assets/track-data-ai.jpg";
 import trackRobotics from "@/assets/track-robotics.jpg";
 import trackAutomotive from "@/assets/track-automotive.jpg";
 import trackOpenInnovation from "@/assets/track-open-innovation.jpg";
+import trackSustainability from "@/assets/track-sustainability.jpg";
 import namtechLogo from "@/assets/namtech-logo.png";
 import {
   Accordion,
@@ -479,6 +480,7 @@ const TRACKS = [
   { image: trackRobotics, name: "Robotics & Automation", desc: "Autonomous systems, cobots, precision automation, and intelligent control systems." },
   { image: trackDataAi, name: "Data Analytics & AI", desc: "Machine learning, predictive maintenance, quality AI, and smart decision systems." },
   { image: trackAutomotive, name: "Automotive Engineering", desc: "EV technology, autonomous vehicles, lightweight materials, and powertrain innovation." },
+  { image: trackSustainability, name: "Sustainability Engineering", desc: "Green manufacturing, circular economy, energy efficiency, and decarbonisation pathways." },
   { image: trackOpenInnovation, name: "Open Innovation / Others", desc: "Breakthrough ideas that defy categories — the next big thing we have not seen yet." },
 ];
 
@@ -489,7 +491,7 @@ function Tracks() {
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Innovation Tracks</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-            Six frontiers. Pick yours.
+            Seven frontiers. Pick yours.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Submit your work under any one of these tracks — the same domains
