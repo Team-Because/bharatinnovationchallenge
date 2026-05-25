@@ -378,7 +378,12 @@ function Rewards() {
               const Icon = p.icon;
               const isFirst = p.rank === 1;
               return (
-                <div key={p.place} className="flex flex-col items-center">
+                <div
+                  key={p.place}
+                  className={`flex flex-col items-center ${
+                    p.rank === 1 ? "order-1 sm:order-2" : p.rank === 2 ? "order-2 sm:order-1" : "order-3 sm:order-3"
+                  }`}
+                >
                   {isFirst && (
                     <div className="relative z-20 mb-10 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-primary shadow-lg">
                       <Sparkles className="h-3.5 w-3.5" /> Top Winner
