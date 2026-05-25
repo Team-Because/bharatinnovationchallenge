@@ -390,7 +390,7 @@ function Rewards() {
                     </div>
                   )}
                   <div
-                    className={`relative flex w-full flex-col items-center justify-end rounded-t-3xl px-6 pb-7 pt-8 text-center ${p.height} ${
+                    className={`relative flex w-full flex-col items-center justify-end rounded-t-3xl px-3 pb-7 pt-8 text-center sm:px-4 md:px-6 ${p.height} ${
                       isFirst
                         ? "bg-primary-foreground text-primary shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.45)]"
                         : "bg-primary-foreground/10 text-primary-foreground ring-1 ring-inset ring-primary-foreground/15"
@@ -408,7 +408,7 @@ function Rewards() {
                     <div className={`text-[10px] font-bold uppercase tracking-[0.18em] ${isFirst ? "text-primary/60" : "text-primary-foreground/60"}`}>
                       {p.place}
                     </div>
-                    <div className={`mt-1 font-black tracking-tight ${isFirst ? "text-5xl sm:text-6xl" : "text-3xl sm:text-4xl"}`}>
+                    <div className={`mt-1 font-black tracking-tight ${isFirst ? "text-5xl md:text-6xl" : "text-3xl md:text-4xl"}`}>
                       {p.amount}
                     </div>
                     <div className={`mt-2 text-xs ${isFirst ? "text-primary/60" : "text-primary-foreground/60"}`}>
