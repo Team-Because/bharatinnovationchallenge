@@ -478,7 +478,6 @@ function Rewards() {
 const TRACKS = [
   { image: trackSmartManufacturing, name: "Smart Manufacturing", desc: "Industry 4.0, IoT-enabled production, digital twins, and intelligent factory systems." },
   { image: trackSemiconductor, name: "Semiconductor Technology", desc: "Chip design, fabrication processes, packaging innovation, and microelectronics." },
-  { image: trackSustainability, name: "Sustainability Engineering", desc: "Green manufacturing, circular economy, carbon-neutral processes, and eco-design." },
   { image: trackRobotics, name: "Robotics & Automation", desc: "Autonomous systems, cobots, precision automation, and intelligent control systems." },
   { image: trackDataAi, name: "Data Analytics & AI", desc: "Machine learning, predictive maintenance, quality AI, and smart decision systems." },
   { image: trackAutomotive, name: "Automotive Engineering", desc: "EV technology, autonomous vehicles, lightweight materials, and powertrain innovation." },
