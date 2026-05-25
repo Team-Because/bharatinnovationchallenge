@@ -373,7 +373,7 @@ function Rewards() {
 
         {/* Podium */}
         <div className="mt-14">
-          <div className="grid items-end gap-5 sm:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-3 sm:items-end">
             {prizes.map((p) => {
               const Icon = p.icon;
               const isFirst = p.rank === 1;
