@@ -142,7 +142,11 @@ function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="h-12 rounded-full px-6 text-sm font-semibold sm:px-7 sm:text-base">
-              <a href="#register">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSencY3qVUwUH1bSDQ04wHheAQbjN06IIQMyK5SrtUY3_0PrCg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Register Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
@@ -827,7 +831,11 @@ function FinalCTA() {
           </p>
           <div className="mt-8">
             <Button asChild size="lg" variant="secondary" className="h-12 rounded-full bg-background px-7 text-sm font-bold text-foreground hover:bg-background/90 sm:h-14 sm:px-9 sm:text-base">
-              <a href="#register">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSencY3qVUwUH1bSDQ04wHheAQbjN06IIQMyK5SrtUY3_0PrCg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Register Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
