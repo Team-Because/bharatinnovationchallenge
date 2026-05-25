@@ -8,7 +8,6 @@ import campusNamtech from "@/assets/campus-namtech.jpg";
 import eligibilityStudents from "@/assets/eligibility-students.jpg";
 import trackSmartManufacturing from "@/assets/track-smart-manufacturing.jpg";
 import trackSemiconductor from "@/assets/track-semiconductor.jpg";
-import trackSustainability from "@/assets/track-sustainability.jpg";
 import trackDataAi from "@/assets/track-data-ai.jpg";
 import trackRobotics from "@/assets/track-robotics.jpg";
 import trackAutomotive from "@/assets/track-automotive.jpg";
@@ -35,7 +34,6 @@ import {
   Building2,
   Cpu,
   CircuitBoard,
-  Leaf,
   Bot,
   BarChart3,
   Car,
@@ -478,7 +476,6 @@ function Rewards() {
 const TRACKS = [
   { image: trackSmartManufacturing, name: "Smart Manufacturing", desc: "Industry 4.0, IoT-enabled production, digital twins, and intelligent factory systems." },
   { image: trackSemiconductor, name: "Semiconductor Technology", desc: "Chip design, fabrication processes, packaging innovation, and microelectronics." },
-  { image: trackSustainability, name: "Sustainability Engineering", desc: "Green manufacturing, circular economy, carbon-neutral processes, and eco-design." },
   { image: trackRobotics, name: "Robotics & Automation", desc: "Autonomous systems, cobots, precision automation, and intelligent control systems." },
   { image: trackDataAi, name: "Data Analytics & AI", desc: "Machine learning, predictive maintenance, quality AI, and smart decision systems." },
   { image: trackAutomotive, name: "Automotive Engineering", desc: "EV technology, autonomous vehicles, lightweight materials, and powertrain innovation." },
@@ -492,7 +489,7 @@ function Tracks() {
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Innovation Tracks</p>
           <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-            Seven frontiers. Pick yours.
+            Six frontiers. Pick yours.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Submit your work under any one of these tracks — the same domains
