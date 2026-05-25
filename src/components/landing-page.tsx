@@ -408,7 +408,7 @@ function Rewards() {
                     <div className={`text-[10px] font-bold uppercase tracking-[0.18em] ${isFirst ? "text-primary/60" : "text-primary-foreground/60"}`}>
                       {p.place}
                     </div>
-                    <div className={`mt-1 font-black tracking-tight ${isFirst ? "text-5xl sm:text-6xl" : "text-3xl sm:text-4xl"}`}>
+                    <div className={`mt-1 font-black tracking-tight ${isFirst ? "text-5xl md:text-6xl" : "text-3xl md:text-4xl"}`}>
                       {p.amount}
                     </div>
                     <div className={`mt-2 text-xs ${isFirst ? "text-primary/60" : "text-primary-foreground/60"}`}>
