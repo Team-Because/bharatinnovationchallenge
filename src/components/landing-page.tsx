@@ -90,8 +90,8 @@ function GridBackdrop() {
 
 function FloatingLogo() {
   return (
-    <div className="absolute inset-x-0 top-6 z-40">
-      <div className="mx-auto max-w-7xl px-6">
+    <div className="absolute inset-x-0 top-4 z-40 sm:top-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <NamtechMark />
       </div>
     </div>
@@ -127,21 +127,21 @@ function Hero() {
         />
       </div>
       <GridBackdrop />
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pb-12 pt-24 sm:px-6 sm:pt-28 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-32">
         <div>
-          <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-black leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             BHARAT INNOVATION
             <br />
             <span className="text-primary">CHALLENGE</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+          <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
             A national innovation platform for B.Tech & BE engineers graduating in
             2024, 2025, and 2026. Showcase your project, prototype, or startup
             idea — and take it to the Grand Finale at NAMTECH.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="h-12 rounded-full px-7 text-base font-semibold">
+            <Button asChild size="lg" className="h-12 rounded-full px-6 text-sm font-semibold sm:px-7 sm:text-base">
               <a href="#register">
                 Register Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
@@ -261,13 +261,13 @@ function _UnusedRegistrationCard() {
 function Overview() {
   return (
     <section id="overview" className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               Competition Overview
             </p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
               A national stage for India's next engineers.
             </h2>
             <div className="mt-6 overflow-hidden rounded-3xl border border-border">
@@ -281,7 +281,7 @@ function Overview() {
               />
             </div>
           </div>
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:pt-20">
+          <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg lg:pt-20">
             <p>
               The <span className="font-semibold text-foreground">Bharat Innovation Challenge</span>{" "}
               is a national platform for B.Tech / BE engineers graduating in
@@ -322,11 +322,11 @@ const WHY = [
 function Why() {
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Why Participate</p>
-            <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
+            <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-tight sm:text-5xl">
               Six reasons to put your idea on the line.
             </h2>
           </div>
@@ -355,13 +355,13 @@ function Rewards() {
   ];
   return (
     <section id="rewards" className="border-t border-border bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/60">
               Rewards & Recognition
             </p>
-            <h2 className="mt-3 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
+            <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
               Every shortlisted participant wins something real.
             </h2>
           </div>
@@ -443,11 +443,11 @@ function Rewards() {
                 <CheckCircle2 className="h-3.5 w-3.5" /> Every Shortlisted Participant
               </div>
             </div>
-            <div className="p-8 sm:p-10">
+            <div className="p-6 sm:p-10">
               <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
                 All Shortlisted Participants Receive
               </div>
-              <h3 className="mt-2 text-2xl font-black sm:text-3xl">
+              <h3 className="mt-2 text-xl font-black sm:text-3xl">
                 2-Day Fully Sponsored NAMTECH Experience Pass
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">Travel + accommodation included</p>
@@ -487,13 +487,13 @@ const TRACKS = [
 function Tracks() {
   return (
     <section id="tracks" className="border-t border-border">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Innovation Tracks</p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
             Seven frontiers. Pick yours.
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Submit your work under any one of these tracks — the same domains
             shaping India's manufacturing future.
           </p>
@@ -552,11 +552,11 @@ function Process() {
   ];
   return (
     <section id="process" className="border-t border-border bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Submission Process</p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
               Just two steps to enter.
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -571,18 +571,18 @@ function Process() {
             return (
               <div
                 key={s.title}
-                className="group relative grid gap-6 rounded-3xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_20px_50px_-25px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8 md:grid-cols-[auto_1fr_auto] md:items-center"
+                className="group relative grid gap-5 rounded-3xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_20px_50px_-25px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-8 md:grid-cols-[auto_1fr_auto] md:items-center"
               >
                 {/* Step number + icon */}
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-4 sm:gap-5">
                   <div className="relative">
-                    <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_12%,transparent)]">
-                      <Icon className="h-7 w-7" />
+                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_0_0_6px_color-mix(in_oklab,var(--primary)_12%,transparent)] sm:h-16 sm:w-16">
+                      <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
                     </span>
                   </div>
                   <span
                     aria-hidden
-                    className="select-none text-6xl font-black leading-none tracking-tighter md:text-7xl"
+                    className="select-none text-5xl font-black leading-none tracking-tighter sm:text-6xl md:text-7xl"
                     style={{ WebkitTextStroke: "1.5px color-mix(in oklab, var(--primary) 45%, transparent)", color: "transparent" }}
                   >
                     0{i + 1}
@@ -596,7 +596,7 @@ function Process() {
                     <span className="h-1 w-1 rounded-full bg-primary/40" />
                     <span className="text-muted-foreground">{s.time}</span>
                   </div>
-                  <h3 className="mt-1 text-xl font-bold sm:text-2xl">{s.title}</h3>
+                  <h3 className="mt-1 text-lg font-bold sm:text-2xl">{s.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 </div>
 
@@ -621,13 +621,13 @@ function Eligibility() {
   ];
   return (
     <section className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl items-end gap-12 px-6 py-16 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-end gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Eligibility</p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
             Are you on the list?
           </h2>
-          <p className="mt-4 max-w-md text-lg text-muted-foreground">
+          <p className="mt-4 max-w-md text-base text-muted-foreground sm:text-lg">
             Built for engineering students at the edge of graduation — ready to
             ship their ideas into the real world.
           </p>
@@ -643,14 +643,14 @@ function Eligibility() {
           </div>
         </div>
         <div>
-          <div className="rounded-3xl border border-border bg-card p-8">
+          <div className="rounded-3xl border border-border bg-card p-6 sm:p-8">
             <ul className="space-y-5">
               {checks.map((c) => (
                 <li key={c} className="flex items-start gap-4 border-b border-border pb-5 last:border-b-0 last:pb-0">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
-                  <div className="text-lg font-semibold text-foreground">{c}</div>
+                  <div className="text-base font-semibold text-foreground sm:text-lg">{c}</div>
                 </li>
               ))}
             </ul>
@@ -691,9 +691,9 @@ function Timeline() {
   return (
     <section className="relative overflow-hidden border-t border-border bg-secondary/40">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,hsl(var(--primary)/0.08),transparent_50%)]" />
-      <div className="relative mx-auto max-w-7xl px-6 py-16">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Timeline</p>
-        <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight sm:text-5xl">
+        <h2 className="mt-3 max-w-2xl text-3xl font-black tracking-tight sm:text-5xl">
           Four phases. One shot.
         </h2>
         <p className="mt-3 max-w-xl text-muted-foreground">
@@ -707,12 +707,12 @@ function Timeline() {
             return (
               <li
                 key={p.label}
-                className="group grid grid-cols-[auto_1fr] items-center gap-6 py-8 transition-colors sm:grid-cols-[auto_auto_1fr_auto] sm:gap-10"
+                className="group grid grid-cols-[auto_1fr] items-center gap-4 py-6 transition-colors sm:grid-cols-[auto_auto_1fr_auto] sm:gap-10 sm:py-8"
               >
                 {/* Giant outlined numeral */}
                 <span
                   aria-hidden
-                  className="select-none text-[3.5rem] font-black leading-none tracking-tighter text-transparent transition-all duration-300 sm:text-[5rem] group-hover:[--tw-text-opacity:1]"
+                  className="select-none text-[2.75rem] font-black leading-none tracking-tighter text-transparent transition-all duration-300 sm:text-[5rem] group-hover:[--tw-text-opacity:1]"
                   style={{
                     WebkitTextStroke: "1.5px color-mix(in oklab, var(--primary) 55%, transparent)",
                   }}
@@ -727,7 +727,7 @@ function Timeline() {
 
                 {/* Label + blurb */}
                 <div className="min-w-0">
-                  <h3 className="text-xl font-black tracking-tight sm:text-2xl">{p.label}</h3>
+                  <h3 className="text-lg font-black tracking-tight sm:text-2xl">{p.label}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground sm:max-w-xl">{p.blurb}</p>
                 </div>
 
@@ -768,13 +768,13 @@ function FAQs() {
   ];
   return (
     <section id="faq" className="border-t border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1fr_1.4fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">FAQs</p>
-          <h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
             Questions, answered.
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Still curious? Write to us at{" "}
             <a href="mailto:met@namtech.ac" className="font-semibold text-foreground underline decoration-primary/40 underline-offset-4">
               met@namtech.ac
@@ -784,10 +784,10 @@ function FAQs() {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((f, i) => (
             <AccordionItem key={f.q} value={`q-${i}`} className="border-border">
-              <AccordionTrigger className="text-left text-base font-semibold">
+              <AccordionTrigger className="text-left text-sm font-semibold sm:text-base">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-base leading-relaxed text-muted-foreground">
+              <AccordionContent className="text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {f.a}
               </AccordionContent>
             </AccordionItem>
@@ -801,7 +801,7 @@ function FAQs() {
 function FinalCTA() {
   return (
     <section className="border-t border-border bg-primary text-primary-foreground">
-      <div className="relative mx-auto max-w-7xl overflow-hidden px-6 py-16 text-center">
+      <div className="relative mx-auto max-w-7xl overflow-hidden px-4 py-14 text-center sm:px-6 sm:py-16">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-0 opacity-30"
@@ -814,14 +814,14 @@ function FinalCTA() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground/70">
             One application. National stage.
           </p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl">
+          <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-black leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
             Your innovation deserves a national stage.
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-primary-foreground/80">
+          <p className="mx-auto mt-5 max-w-xl text-base text-primary-foreground/80 sm:text-lg">
             Register now and take your idea to the Grand Finale at NAMTECH.
           </p>
-          <div className="mt-9">
-            <Button asChild size="lg" variant="secondary" className="h-14 rounded-full bg-background px-9 text-base font-bold text-foreground hover:bg-background/90">
+          <div className="mt-8">
+            <Button asChild size="lg" variant="secondary" className="h-12 rounded-full bg-background px-7 text-sm font-bold text-foreground hover:bg-background/90 sm:h-14 sm:px-9 sm:text-base">
               <a href="#register">
                 Register Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
@@ -836,12 +836,12 @@ function FinalCTA() {
 function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 py-12 sm:flex-row sm:items-center">
+      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6 sm:py-12">
         <NamtechMark />
-        <div className="text-sm text-muted-foreground">
+        <div className="text-xs text-muted-foreground sm:text-sm">
           © {new Date().getFullYear()} NAMTECH · Bharat Innovation Challenge
         </div>
-        <div className="flex gap-6 text-sm text-muted-foreground">
+        <div className="flex gap-5 text-xs text-muted-foreground sm:gap-6 sm:text-sm">
           <a href="#" className="hover:text-foreground">Privacy</a>
           <a href="#" className="hover:text-foreground">Terms</a>
           <a href="mailto:met@namtech.ac" className="hover:text-foreground">Contact</a>
@@ -853,11 +853,11 @@ function Footer() {
 
 function StickyApply() {
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
       <Button
         asChild
         size="lg"
-        className="h-14 rounded-full px-8 text-base font-bold shadow-[0_12px_40px_-10px_color-mix(in_oklab,var(--primary)_50%,transparent)] transition-transform hover:scale-105"
+        className="h-12 rounded-full px-5 text-sm font-bold shadow-[0_12px_40px_-10px_color-mix(in_oklab,var(--primary)_50%,transparent)] transition-transform hover:scale-105 sm:h-14 sm:px-8 sm:text-base"
       >
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSencY3qVUwUH1bSDQ04wHheAQbjN06IIQMyK5SrtUY3_0PrCg/viewform"
