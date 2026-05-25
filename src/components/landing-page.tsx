@@ -390,7 +390,7 @@ function Rewards() {
                     </div>
                   )}
                   <div
-                    className={`relative flex w-full flex-col items-center justify-end rounded-t-3xl px-6 pb-7 pt-8 text-center ${p.height} ${
+                    className={`relative flex w-full flex-col items-center justify-end rounded-t-3xl px-3 pb-7 pt-8 text-center sm:px-4 md:px-6 ${p.height} ${
                       isFirst
                         ? "bg-primary-foreground text-primary shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.45)]"
                         : "bg-primary-foreground/10 text-primary-foreground ring-1 ring-inset ring-primary-foreground/15"
