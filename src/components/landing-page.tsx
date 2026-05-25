@@ -8,7 +8,6 @@ import campusNamtech from "@/assets/campus-namtech.jpg";
 import eligibilityStudents from "@/assets/eligibility-students.jpg";
 import trackSmartManufacturing from "@/assets/track-smart-manufacturing.jpg";
 import trackSemiconductor from "@/assets/track-semiconductor.jpg";
-import trackSustainability from "@/assets/track-sustainability.jpg";
 import trackDataAi from "@/assets/track-data-ai.jpg";
 import trackRobotics from "@/assets/track-robotics.jpg";
 import trackAutomotive from "@/assets/track-automotive.jpg";
