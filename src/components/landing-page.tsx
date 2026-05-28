@@ -862,9 +862,16 @@ function Footer() {
       </div>
       <div className="border-t border-border/60 bg-background">
         <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6">
-          <p className="text-xs text-muted-foreground">
-            Made by <span className="font-semibold text-foreground">Because</span>
-          </p>
+          <a
+            href="https://teambecause.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <p className="text-xs text-muted-foreground">
+              Made by <span className="font-semibold text-foreground">Because</span>
+            </p>
+          </a>
         </div>
       </div>
     </footer>
