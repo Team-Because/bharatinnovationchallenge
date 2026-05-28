@@ -860,6 +860,13 @@ function Footer() {
           <a href="mailto:met@namtech.ac" className="hover:text-foreground">Contact</a>
         </div>
       </div>
+      <div className="border-t border-border/60 bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6">
+          <p className="text-xs text-muted-foreground">
+            Made by <span className="font-semibold text-foreground">Because</span>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }
@@ -900,6 +907,7 @@ export function LandingPage() {
         <FAQs />
         <FinalCTA />
       </main>
+      <Footer />
       <StickyApply />
     </div>
   );
